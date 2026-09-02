@@ -1,22 +1,22 @@
-0<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MERICoN Integrated Engineering Ltd. | Automation, Energy Audits & Construction</title>
+    <title>MERICoN Integrated Engineering Ltd. | Industrial Automation & Civil Construction</title>
     <meta
       name="description"
-      content="MERICoN Integrated Engineering Ltd. delivers industrial automation, PLC programming, energy audits, house construction, electrical installations, and digital productivity tools."
+      content="Industrial automation, PLC programming, energy audits, house construction, and electrical installations across Rwanda and East Africa."
     />
     <meta
       name="keywords"
-      content="MERICoN, industrial automation, PLC programming, energy audits, SOP templates, house construction, domestic electrical installation, industrial electrical, engineering Rwanda"
+      content="MERICoN, industrial automation, PLC programming, energy audits, house construction, electrical installation, Rwanda"
     />
     <meta name="author" content="MERICoN Integrated Engineering Ltd." />
     <meta property="og:title" content="MERICoN Integrated Engineering Ltd." />
     <meta
       property="og:description"
-      content="Automation solutions, energy audits, civil house construction, and electrical installation engineering."
+      content="Automation solutions, energy audits, house construction, and electrical engineering."
     />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#0d1b2a" />
@@ -43,219 +43,186 @@
 
     <style>
       :root {
-        --brand-navy: #0d1b2a;
-        --brand-slate: #1b263b;
-        --brand-accent: #00e5ff;
-        --brand-blue: #0077b6;
-        --brand-light-blue: #e0f1f7;
-        --text-main: #2b2d42;
+        --navy: #0d1b2a;
+        --slate: #1b263b;
+        --cyan: #00e5ff;
+        --blue: #0077b6;
+        --light-bg: #e0f1f7;
+        --text-dark: #2b2d42;
         --text-muted: #6c757d;
-        --bg-body: #ffffff;
-        --bg-alt: #f8f9fa;
-        --card-bg: #ffffff;
-        --card-border: rgba(13, 27, 42, 0.08);
-        --nav-bg: #ffffff;
-        --input-bg: #ffffff;
-        --input-border: #dee2e6;
+        --border-light: #dee2e6;
+        --divider: rgba(13, 27, 42, 0.08);
       }
 
-      /* Dark Theme Variable Overrides */
       body.dark-mode {
-        --brand-navy: #080f18;
-        --brand-slate: #101926;
-        --text-main: #e2e8f0;
+        --navy: #080f18;
+        --slate: #101926;
+        --text-dark: #e2e8f0;
         --text-muted: #94a3b8;
         --bg-body: #0a111c;
         --bg-alt: #0f172a;
-        --card-bg: #111c2d;
-        --card-border: rgba(255, 255, 255, 0.1);
-        --nav-bg: #080f18;
-        --input-bg: #162235;
-        --input-border: #2a3b53;
+        --border-light: rgba(255, 255, 255, 0.1);
+        --divider: rgba(255, 255, 255, 0.1);
       }
 
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 80px; /* Prevents sticky navbar from covering section titles */
+        scroll-padding-top: 80px;
       }
 
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        color: var(--text-main);
-        background-color: var(--bg-body);
+        color: var(--text-dark);
+        background-color: #ffffff;
         overflow-x: hidden;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
 
-      h1, h2, h3, h4, .brand-font {
-        letter-spacing: -0.02em;
+      body.dark-mode {
+        background-color: var(--bg-body);
       }
 
-      /* Header & Nav Styling - White Nav with Dark Blue Bottom Border */
+      h1, h2, h3, h4, h5, h6 {
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* HEADER & NAVIGATION                                              */
+      /* ─────────────────────────────────────────────────────────────── */
+
       .site-header {
-        background-color: var(--nav-bg);
+        background-color: #ffffff;
         backdrop-filter: blur(12px);
         position: sticky;
         top: 0;
         z-index: 1030;
-        border-bottom: 3px solid #0d1b2a; /* Dark Blue Bottom Border */
-        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        padding: 6px 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-      }
-
-      .site-header.scrolled {
-        padding: 2px 0;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        border-bottom-color: #0077b6;
+        border-bottom: 2px solid var(--navy);
+        transition: all 0.3s ease;
+        padding: 8px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
 
       body.dark-mode .site-header {
-        border-bottom: 3px solid var(--brand-accent);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        background-color: var(--navy);
+        border-bottom-color: var(--cyan);
       }
 
-      .brand-mark {
-        background: linear-gradient(135deg, var(--brand-navy), var(--brand-blue));
-        color: #ffffff;
-        font-weight: 900;
-        padding: 4px 10px;
-        border-radius: 8px;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
+      .site-header.scrolled {
+        padding: 4px 0;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
       }
 
-      body.dark-mode .brand-mark {
-        background: linear-gradient(135deg, var(--brand-accent), var(--brand-blue));
-        color: #0d1b2a;
+      .navbar-brand {
+        gap: 12px;
       }
 
-      .site-header.scrolled .brand-mark {
-        padding: 3px 8px;
-        font-size: 0.9rem;
+      .navbar-brand img {
+        max-height: 50px;
+        width: auto;
       }
 
-      .brand-copy {
+      .brand-text {
         display: flex;
         flex-direction: column;
-        line-height: 1.1;
+        justify-content: center;
+        line-height: 1;
       }
 
-      .brand-copy strong {
-        color: #0d1b2a;
-        font-size: 1.15rem;
-        letter-spacing: 0.5px;
-        transition: font-size 0.3s ease;
+      .brand-text strong {
+        color: var(--navy);
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
       }
 
-      body.dark-mode .brand-copy strong {
+      body.dark-mode .brand-text strong {
         color: #ffffff;
       }
 
-      .site-header.scrolled .brand-copy strong {
-        font-size: 1rem;
-      }
-
-      .brand-copy small {
-        color: var(--brand-blue);
-        font-size: 0.68rem;
+      .brand-text small {
+        color: var(--blue);
+        font-size: 0.65rem;
         text-transform: uppercase;
-        letter-spacing: 1.2px;
+        letter-spacing: 1px;
         font-weight: 700;
       }
 
-      body.dark-mode .brand-copy small {
-        color: var(--brand-accent);
-      }
-
-      .site-header.scrolled .brand-copy small {
-        display: none; /* Hide subtitle on scroll for slim profile */
+      body.dark-mode .brand-text small {
+        color: var(--cyan);
       }
 
       .nav-link {
-        color: #0d1b2a !important;
-        font-weight: 600;
-        font-size: 0.875rem;
-        padding: 0.4rem 0.65rem !important;
-        transition: color 0.2s ease, transform 0.2s ease;
+        color: var(--text-dark) !important;
+        font-weight: 500;
+        font-size: 0.95rem;
+        padding: 0.5rem 0.75rem !important;
+        transition: all 0.2s ease;
+        position: relative;
       }
 
       body.dark-mode .nav-link {
-        color: rgba(255, 255, 255, 0.88) !important;
+        color: rgba(255, 255, 255, 0.85) !important;
       }
 
-      .nav-link:hover {
-        color: var(--brand-blue) !important;
-        transform: translateY(-1px);
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--blue);
+        transition: width 0.3s ease;
       }
 
-      body.dark-mode .nav-link:hover {
-        color: var(--brand-accent) !important;
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      body.dark-mode .nav-link::after {
+        background: var(--cyan);
       }
 
       .theme-btn {
         background: rgba(13, 27, 42, 0.06);
-        color: #0d1b2a;
-        border: 1px solid rgba(13, 27, 42, 0.2);
-        padding: 4px 12px;
-        border-radius: 50px;
-        font-size: 0.8rem;
+        color: var(--navy);
+        border: 1px solid rgba(13, 27, 42, 0.15);
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 0.85rem;
         font-weight: 600;
         display: inline-flex;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
         cursor: pointer;
         transition: all 0.2s ease;
       }
 
       .theme-btn:hover {
-        background: #0d1b2a;
+        background: var(--navy);
         color: #ffffff;
-        border-color: #0d1b2a;
+        border-color: var(--navy);
       }
 
       body.dark-mode .theme-btn {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--brand-accent);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--cyan);
+        border-color: rgba(255, 255, 255, 0.15);
       }
 
       body.dark-mode .theme-btn:hover {
-        background: rgba(0, 229, 255, 0.2);
-        color: #ffffff;
-        border-color: var(--brand-accent);
-      }
-
-      /* Eyebrow badge */
-      .eyebrow {
-        display: inline-block;
-        font-size: 0.825rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: var(--brand-blue);
-        background: rgba(0, 119, 182, 0.12);
-        padding: 6px 16px;
-        border-radius: 50px;
-        margin-bottom: 1rem;
-      }
-
-      body.dark-mode .eyebrow {
-        color: var(--brand-accent);
         background: rgba(0, 229, 255, 0.15);
+        border-color: var(--cyan);
       }
 
-      .eyebrow-dark {
-        color: var(--brand-accent);
-        background: rgba(0, 229, 255, 0.15);
-      }
+      /* ─────────────────────────────────────────────────────────────── */
+      /* HERO SECTION                                                     */
+      /* ─────────────────────────────────────────────────────────────── */
 
-      /* Hero Section */
       .hero-section {
-        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 60%, #003554 100%);
+        background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 60%, #003554 100%);
         color: #ffffff;
-        padding: 70px 0 80px;
+        padding: 80px 0 100px;
         position: relative;
         overflow: hidden;
       }
@@ -263,266 +230,460 @@
       .hero-section::before {
         content: '';
         position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, rgba(0,0,0,0) 70%);
+        top: -40%;
+        right: -15%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
         border-radius: 50%;
         pointer-events: none;
       }
 
+      .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-content > p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 520px;
+        margin-bottom: 2rem;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--cyan);
+        background: rgba(0, 229, 255, 0.12);
+        padding: 8px 16px;
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+
       .hero-stats {
-        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.5rem;
+        max-width: 500px;
       }
 
       .stat-box {
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 16px;
+        border-radius: 10px;
+        padding: 18px;
         text-align: center;
-        backdrop-filter: blur(5px);
-        transition: transform 0.3s ease;
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
       }
 
       .stat-box:hover {
-        transform: translateY(-5px);
-        border-color: var(--brand-accent);
+        transform: translateY(-4px);
+        border-color: var(--cyan);
+        background: rgba(0, 229, 255, 0.08);
       }
 
       .stat-box strong {
         display: block;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 800;
-        color: var(--brand-accent);
+        color: var(--cyan);
+        margin-bottom: 6px;
       }
 
-      .stat-box span {
-        font-size: 0.8rem;
+      .stat-box small {
+        font-size: 0.75rem;
         color: rgba(255, 255, 255, 0.7);
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
 
-      /* Photo Container & Image Styling */
-      .img-container {
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-        background-color: #1b263b;
-      }
-
-      .img-container img {
+      .hero-visual img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         transition: transform 0.4s ease;
       }
 
-      .img-container:hover img {
-        transform: scale(1.04);
+      .hero-visual:hover img {
+        transform: scale(1.02);
       }
 
-      .hero-visual {
-        position: relative;
+      /* ─────────────────────────────────────────────────────────────── */
+      /* CAPABILITY STRIP                                                 */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      .capability-strip {
+        background: var(--navy);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
 
-      .hero-main-img {
-        min-height: 380px;
-        max-height: 420px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        border: 2px solid rgba(255, 255, 255, 0.15);
+      .capability-strip .capability-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.95rem;
+        font-weight: 500;
       }
 
-      .glass-card {
-        background: rgba(13, 27, 42, 0.88);
-        border: 1px solid rgba(0, 229, 255, 0.3);
-        backdrop-filter: blur(12px);
+      .capability-strip .capability-item i {
+        color: var(--cyan);
+        font-size: 1.1rem;
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* SERVICES SECTION                                                 */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      .section-heading {
+        margin-bottom: 4rem;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .section-heading p {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: #ffffff;
+        border: 1px solid var(--divider);
         border-radius: 12px;
-        padding: 12px 18px;
-        position: absolute;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        z-index: 10;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
       }
 
-      .mini-card {
-        top: 20px;
-        right: -20px;
+      body.dark-mode .service-card {
+        background: var(--slate);
+        border-color: var(--divider);
       }
 
-      .bottom-card {
-        bottom: 20px;
-        left: -20px;
-        top: auto;
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+        border-color: var(--blue);
       }
 
-      .mini-label {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        color: var(--brand-accent);
-        display: block;
-        letter-spacing: 1px;
+      body.dark-mode .service-card:hover {
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
       }
 
-      .glass-card strong {
-        color: #ffffff;
-        font-size: 0.9rem;
+      .service-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--light-bg);
+        color: var(--blue);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
       }
 
-      /* Section Common */
+      body.dark-mode .service-icon {
+        background: rgba(0, 229, 255, 0.12);
+        color: var(--cyan);
+      }
+
+      .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        font-size: 0.95rem;
+        flex-grow: 1;
+      }
+
+      .service-card .text-link {
+        color: var(--blue);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--divider);
+        transition: all 0.2s ease;
+      }
+
+      body.dark-mode .service-card .text-link {
+        color: var(--cyan);
+      }
+
+      .service-card .text-link:hover {
+        gap: 10px;
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* WHY CHOOSE US SECTION                                            */
+      /* ─────────────────────────────────────────────────────────────── */
+
       .section-spacing {
         padding: 80px 0;
       }
 
       .alt-bg {
+        background-color: #f8f9fa;
+      }
+
+      body.dark-mode .alt-bg {
         background-color: var(--bg-alt);
       }
 
-      /* Cards Styling */
-      .info-card, .product-card, .team-card {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 16px;
-        padding: 24px;
-        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      .value-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+      }
+
+      .value-list li {
         display: flex;
-        flex-direction: column;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        gap: 12px;
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
       }
 
-      .info-card:hover, .product-card:hover, .team-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 16px 32px rgba(13, 27, 42, 0.12);
-        border-color: rgba(0, 119, 182, 0.4);
-      }
-
-      .card-img-wrapper {
-        height: 200px;
-        border-radius: 12px;
-        overflow: hidden;
-        margin-bottom: 20px;
-        position: relative;
-        cursor: pointer;
-        background-color: #1b263b;
-      }
-
-      .card-img-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-      }
-
-      .card-img-wrapper:hover img {
-        transform: scale(1.06);
-      }
-
-      .img-zoom-badge {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background: rgba(13, 27, 42, 0.75);
-        color: #fff;
-        font-size: 0.75rem;
-        padding: 4px 10px;
-        border-radius: 20px;
-        backdrop-filter: blur(4px);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .card-img-wrapper:hover .img-zoom-badge {
-        opacity: 1;
-      }
-
-      .icon-box {
-        width: 54px;
-        height: 54px;
-        background: var(--brand-light-blue);
-        color: var(--brand-blue);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-      }
-
-      body.dark-mode .icon-box {
-        background: rgba(0, 229, 255, 0.15);
-        color: var(--brand-accent);
-      }
-
-      .product-icon-badge {
-        width: 50px;
-        height: 50px;
-        background: var(--brand-slate);
-        color: var(--brand-accent);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .value-list li::before {
+        content: '✓';
+        color: var(--blue);
         font-weight: 800;
         font-size: 1.1rem;
-        margin-bottom: 20px;
-        font-family: 'JetBrains Mono', monospace;
+        flex-shrink: 0;
       }
 
-      .info-card h3, .product-card h3, .team-card h3 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: var(--text-main);
+      body.dark-mode .value-list li::before {
+        color: var(--cyan);
       }
 
-      .info-card p, .product-card p, .team-card p {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        line-height: 1.6;
+      /* ─────────────────────────────────────────────────────────────── */
+      /* PORTFOLIO SECTION                                                */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
       }
 
-      /* Team Card Specifics */
-      .team-img-wrapper {
-        height: 250px;
-        border-radius: 14px;
+      .project-card {
+        background: #ffffff;
+        border: 1px solid var(--divider);
+        border-radius: 12px;
         overflow: hidden;
-        margin-bottom: 18px;
-        position: relative;
-        background-color: #1b263b;
+        transition: all 0.3s ease;
       }
 
-      .team-img-wrapper img {
+      body.dark-mode .project-card {
+        background: var(--slate);
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        border-color: var(--blue);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        overflow: hidden;
+        background: var(--slate);
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .project-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: top center;
         transition: transform 0.4s ease;
       }
 
-      .team-card:hover .team-img-wrapper img {
+      .project-card:hover .project-image img {
+        transform: scale(1.08);
+      }
+
+      .project-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: rgba(13, 27, 42, 0.85);
+        color: #ffffff;
+        padding: 6px 12px;
+        border-radius: 6px;
+        backdrop-filter: blur(4px);
+      }
+
+      .project-content {
+        padding: 1.5rem;
+      }
+
+      .project-category {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--blue);
+        background: rgba(0, 119, 182, 0.1);
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin-bottom: 0.75rem;
+      }
+
+      body.dark-mode .project-category {
+        color: var(--cyan);
+        background: rgba(0, 229, 255, 0.1);
+      }
+
+      .project-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-card p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .project-result {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--divider);
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* TEAM SECTION                                                     */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .team-card {
+        background: #ffffff;
+        border: 1px solid var(--divider);
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      body.dark-mode .team-card {
+        background: var(--slate);
+      }
+
+      .team-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      }
+
+      .team-image {
+        width: 100%;
+        height: 280px;
+        background: var(--slate);
+        overflow: hidden;
+      }
+
+      .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .team-card:hover .team-image img {
         transform: scale(1.05);
       }
 
+      .team-content {
+        padding: 1.75rem;
+      }
+
       .team-role {
-        font-size: 0.825rem;
+        display: block;
+        font-size: 0.75rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--brand-blue);
+        color: var(--blue);
         letter-spacing: 0.8px;
-        margin-bottom: 8px;
-        display: block;
+        margin-bottom: 0.5rem;
       }
 
       body.dark-mode .team-role {
-        color: var(--brand-accent);
+        color: var(--cyan);
+      }
+
+      .team-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .team-card p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
       }
 
       .team-socials {
         display: flex;
-        gap: 12px;
-        margin-top: auto;
-        padding-top: 15px;
+        gap: 8px;
+        justify-content: center;
       }
 
       .team-socials a {
@@ -530,208 +691,245 @@
         height: 36px;
         border-radius: 50%;
         background: rgba(0, 119, 182, 0.1);
-        color: var(--brand-blue);
+        color: var(--blue);
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
         transition: all 0.2s ease;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
       body.dark-mode .team-socials a {
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--brand-accent);
+        background: rgba(0, 229, 255, 0.1);
+        color: var(--cyan);
       }
 
       .team-socials a:hover {
-        background: var(--brand-blue);
+        background: var(--blue);
         color: #ffffff;
-        transform: translateY(-2px);
+        transform: translateY(-3px);
       }
 
-      .text-link {
-        color: var(--brand-blue);
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: auto;
-        padding-top: 15px;
-        transition: gap 0.2s ease;
+      /* ─────────────────────────────────────────────────────────────── */
+      /* PRODUCTS SECTION                                                 */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
       }
 
-      body.dark-mode .text-link {
-        color: var(--brand-accent);
+      .product-card {
+        background: #ffffff;
+        border: 1px solid var(--divider);
+        border-radius: 12px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
       }
 
-      .text-link:hover {
-        gap: 10px;
+      body.dark-mode .product-card {
+        background: var(--slate);
       }
 
-      /* Check List */
-      .check-list {
-        list-style: none;
-        padding: 0;
-        margin: 25px 0;
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+        border-color: var(--blue);
       }
 
-      .check-list li {
-        position: relative;
-        padding-left: 36px;
-        margin-bottom: 16px;
-        font-weight: 500;
-        font-size: 1.05rem;
-      }
-
-      .check-list li::before {
-        content: '\f00c';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        position: absolute;
-        left: 0;
-        top: 2px;
-        width: 24px;
-        height: 24px;
-        background: rgba(0, 119, 182, 0.12);
-        color: var(--brand-blue);
-        border-radius: 50%;
+      .product-badge {
+        width: 60px;
+        height: 60px;
+        background: var(--navy);
+        color: var(--cyan);
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.75rem;
-      }
-
-      body.dark-mode .check-list li::before {
-        background: rgba(0, 229, 255, 0.15);
-        color: var(--brand-accent);
-      }
-
-      /* Interactive ROI Calculator Section */
-      .calc-card {
-        background: var(--card-bg);
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-        border: 1px solid var(--card-border);
-      }
-
-      .calc-result-box {
-        background: #0d1b2a;
-        color: #ffffff;
-        border-radius: 16px;
-        padding: 24px;
-      }
-
-      .calc-result-box .val {
+        font-weight: 800;
+        font-size: 1.2rem;
+        margin: 0 auto 1.5rem;
         font-family: 'JetBrains Mono', monospace;
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--brand-accent);
       }
 
-      /* CTA Banner */
-      .cta-banner {
-        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+      .product-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .product-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        flex-grow: 1;
+      }
+
+      .product-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        transition: gap 0.2s ease;
+      }
+
+      body.dark-mode .product-link {
+        color: var(--cyan);
+      }
+
+      .product-link:hover {
+        gap: 10px;
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* CTA SECTION                                                      */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      .cta-section {
+        background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
         color: #ffffff;
+        padding: 60px 0;
       }
 
-      .cta-box {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 24px;
-        padding: 40px;
-        backdrop-filter: blur(10px);
+      .cta-content {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 3rem;
+        backdrop-filter: blur(8px);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
       }
 
-      /* Contact Form */
-      .contact-section {
-        background-color: var(--bg-body);
+      @media (min-width: 768px) {
+        .cta-content {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
       }
+
+      .cta-content h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin: 0;
+      }
+
+      .cta-content p {
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* CONTACT FORM                                                     */
+      /* ─────────────────────────────────────────────────────────────── */
 
       .contact-form {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        padding: 36px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        background: #ffffff;
+        border: 1px solid var(--border-light);
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      }
+
+      body.dark-mode .contact-form {
+        background: var(--slate);
+        border-color: var(--divider);
       }
 
       .contact-form label {
         display: flex;
         flex-direction: column;
-        width: 100%;
         font-weight: 600;
-        font-size: 0.875rem;
-        color: var(--text-main);
-        margin-bottom: 6px;
+        font-size: 0.85rem;
+        color: var(--text-dark);
+        margin-bottom: 4px;
       }
 
       .contact-form input,
       .contact-form select,
       .contact-form textarea {
         margin-top: 6px;
-        padding: 12px 16px;
-        border: 1px solid var(--input-border);
-        background-color: var(--input-bg);
-        color: var(--text-main);
-        border-radius: 10px;
+        padding: 12px 14px;
+        border: 1px solid var(--border-light);
+        background-color: #ffffff;
+        color: var(--text-dark);
+        border-radius: 8px;
         font-size: 0.95rem;
         transition: all 0.2s ease;
+        font-family: inherit;
+      }
+
+      body.dark-mode .contact-form input,
+      body.dark-mode .contact-form select,
+      body.dark-mode .contact-form textarea {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: var(--divider);
+        color: var(--text-dark);
       }
 
       .contact-form input:focus,
       .contact-form select:focus,
       .contact-form textarea:focus {
         outline: none;
-        border-color: var(--brand-blue);
-        box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
       }
 
-      .consent-row {
+      .contact-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+      }
+
+      .contact-info {
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-info strong {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: var(--blue);
+        letter-spacing: 0.8px;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      body.dark-mode .contact-info strong {
+        color: var(--cyan);
+      }
+
+      .contact-info a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 0.85rem;
-        color: var(--text-muted);
+        gap: 8px;
+        font-size: 0.95rem;
       }
 
-      .contact-item {
-        margin-bottom: 24px;
-        display: flex;
-        flex-direction: column;
+      .contact-info a:hover {
+        color: var(--blue);
       }
 
-      .contact-item strong {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        color: var(--brand-blue);
-        letter-spacing: 1px;
-      }
+      /* ─────────────────────────────────────────────────────────────── */
+      /* FOOTER                                                           */
+      /* ─────────────────────────────────────────────────────────────── */
 
-      body.dark-mode .contact-item strong {
-        color: var(--brand-accent);
-      }
-
-      .contact-item a {
-        color: var(--text-main);
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-decoration: none;
-        margin-top: 4px;
-      }
-
-      .contact-item a:hover {
-        color: var(--brand-blue);
-      }
-
-      /* Footer */
       .site-footer {
-        background-color: #080f18;
+        background-color: var(--navy);
         color: rgba(255, 255, 255, 0.7);
-        padding: 50px 0 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 4rem 0 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .site-footer strong {
@@ -739,77 +937,155 @@
         font-size: 1.1rem;
       }
 
+      .footer-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-top: 0.75rem;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
       .footer-links a {
         color: rgba(255, 255, 255, 0.7);
         text-decoration: none;
+        font-size: 0.9rem;
         transition: color 0.2s ease;
       }
 
       .footer-links a:hover {
-        color: var(--brand-accent);
+        color: var(--cyan);
       }
 
-      /* Custom Modal Styles for Gallery */
+      .footer-bottom {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 2rem;
+        margin-top: 2rem;
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* UTILITIES                                                        */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      .btn-primary {
+        background-color: var(--blue);
+        border-color: var(--blue);
+        font-weight: 600;
+        padding: 10px 24px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #005f99;
+        border-color: #005f99;
+      }
+
+      .btn-outline-light {
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: #ffffff;
+        color: #ffffff;
+      }
+
+      .btn-info {
+        background-color: var(--cyan);
+        border-color: var(--cyan);
+        color: var(--navy);
+        font-weight: 600;
+      }
+
+      .btn-info:hover {
+        background-color: #00c9e0;
+        border-color: #00c9e0;
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* RESPONSIVE                                                       */
+      /* ─────────────────────────────────────────────────────────────── */
+
+      @media (max-width: 768px) {
+        .section-spacing {
+          padding: 60px 0;
+        }
+
+        .hero-section {
+          padding: 60px 0 80px;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+        }
+
+        .cta-content {
+          padding: 2rem;
+        }
+
+        .cta-content h2 {
+          font-size: 1.4rem;
+        }
+      }
+
+      /* ─────────────────────────────────────────────────────────────── */
+      /* MODAL                                                            */
+      /* ─────────────────────────────────────────────────────────────── */
+
       .modal-content {
-        border-radius: 16px;
-        overflow: hidden;
-        background-color: var(--card-bg);
-        color: var(--text-main);
+        border-radius: 12px;
+        border: 1px solid var(--divider);
       }
 
-      @media (max-width: 991px) {
-        .mini-card, .bottom-card {
-          position: static;
-          margin-top: 15px;
-        }
-        .hero-visual {
-          margin-top: 30px;
-        }
+      body.dark-mode .modal-content {
+        background-color: var(--slate);
+        color: var(--text-dark);
       }
     </style>
   </head>
 
   <body>
-    <!-- Navigation Bar - White Background with Dark Blue Bottom Border -->
+    <!-- HEADER -->
     <header class="site-header" id="siteHeader">
-      <nav class="navbar navbar-expand-lg navbar-light container py-1">
-        <div class="container-fluid px-0">
-          <a href="#top" class="navbar-brand d-flex align-items-center gap-2" aria-label="MERICoN home">
-            <img src="MERICoN/MERICON LOGO OG.jpg" height  = "60px", width = "auto" alt="">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a href="#top" class="navbar-brand">
+            <img src="MERICoN/MERICON LOGO OG.jpg" alt="MERICoN Logo" />
+            <div class="brand-text d-none d-sm-flex">
+              <strong>MERICoN</strong>
+              <small>Engineering</small>
+            </div>
           </a>
 
-          <button
-            class="navbar-toggler border-0"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNav"
-            aria-controls="mainNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="mainNav">
-            <div class="mx-auto nav-center">
-              <ul class="navbar-nav gap-lg-1">
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" href="#work">Our Work</a></li>
-                <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
-                <li class="nav-item"><a class="nav-link" href="#calculator">ROI Calculator</a></li>
-                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-              </ul>
-            </div>
+            <ul class="navbar-nav ms-auto gap-1">
+              <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+              <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
 
-            <div class="d-flex align-items-center gap-2 flex-wrap mt-2 mt-lg-0">
+            <div class="d-flex align-items-center gap-2 ms-3 flex-wrap">
               <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle dark/light theme">
                 <i class="fa-solid fa-moon"></i> <span>Dark</span>
               </button>
-              <a href="#contact" class="btn btn-outline-dark btn-sm rounded-pill px-3 py-1 text-nowrap fw-semibold" style="font-size:0.8rem;">Book Consult</a>
-              <button class="btn btn-primary btn-sm rounded-pill px-3 py-1 text-nowrap whatsapp-trigger" data-type="general" style="font-size:0.8rem;">
-                <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp
+              <a href="#contact" class="btn btn-outline-dark btn-sm text-nowrap" style="font-size: 0.85rem;">Consult</a>
+              <button class="btn btn-primary btn-sm text-nowrap whatsapp-trigger" data-type="general" style="font-size: 0.85rem;">
+                <i class="fa-brands fa-whatsapp"></i> Chat
               </button>
             </div>
           </div>
@@ -818,39 +1094,35 @@
     </header>
 
     <main id="top">
-      <!-- Hero Section -->
+      <!-- HERO SECTION -->
       <section class="hero-section">
         <div class="container">
-          <div class="row align-items-center gy-4">
+          <div class="row align-items-center gy-5">
             <div class="col-lg-6">
-              <span class="eyebrow eyebrow-dark">Automation • Energy Audits • House Construction</span>
-              <h1 class="display-5 fw-bold mb-3">Precision Automation, Civil Construction &amp; Electrical Engineering Solutions.</h1>
-              <p class="lead text-white-50 mb-4">
-                MERICoN Integrated Engineering Ltd. delivers end-to-end industrial automation, power quality audits, domestic &amp; industrial electrical installations, and modern house construction services across Rwanda and East Africa.
-              </p>
+              <div class="hero-content">
+                <div class="hero-badge">
+                  <i class="fa-solid fa-bolt me-1"></i> Precision Engineering
+                </div>
+                <h1>Automation, Electrical & Construction Solutions</h1>
+                <p>Industrial PLC systems, power optimization, and turnkey residential construction. Delivered on schedule across Rwanda and East Africa.</p>
 
-              <div class="d-flex flex-wrap gap-3 mb-4">
-                <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">Request Project Review</a>
-                <a href="#products" class="btn btn-outline-light btn-lg rounded-pill px-4">Browse Digital Products</a>
-              </div>
+                <div class="hero-cta">
+                  <a href="#contact" class="btn btn-primary btn-lg">Request Review</a>
+                  <a href="#products" class="btn btn-outline-light btn-lg">Explore Tools</a>
+                </div>
 
-              <div class="hero-stats row g-3">
-                <div class="col-4">
+                <div class="hero-stats">
                   <div class="stat-box">
                     <strong>24/7</strong>
-                    <span>Support Mindset</span>
+                    <small>Support</small>
                   </div>
-                </div>
-                <div class="col-4">
                   <div class="stat-box">
                     <strong>+35%</strong>
-                    <span>Efficiency Gain</span>
+                    <small>Efficiency</small>
                   </div>
-                </div>
-                <div class="col-4">
                   <div class="stat-box">
                     <strong>100%</strong>
-                    <span>Turnkey Quality</span>
+                    <small>Turnkey</small>
                   </div>
                 </div>
               </div>
@@ -858,39 +1130,22 @@
 
             <div class="col-lg-6">
               <div class="hero-visual">
-                <!-- HERO IMAGE -->
-                <div class="img-container hero-main-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
-                    alt="Industrial Automation Control Room Panel"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x800/0d1b2a/00e5ff?text=MERICoN+Industrial+Engineering';"
-                  />
-                </div>
-
-                <div class="mini-card glass-card">
-                  <span class="mini-label"><i class="fa-solid fa-chart-line me-1"></i> System Visibility</span>
-                  <strong>96.4% Operational Up-time</strong>
-                </div>
-
-                <div class="mini-card bottom-card glass-card">
-                  <span class="mini-label"><i class="fa-solid fa-house-chimney me-1"></i> Civil &amp; Electrical</span>
-                  <strong>Residential &amp; Factory Projects</strong>
-                </div>
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" alt="Industrial Control Panel" onerror="this.src='https://via.placeholder.com/1200x800/0d1b2a/00e5ff?text=MERICoN+Engineering';" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Brand Strip -->
-      <section class="bg-dark text-white py-3 border-bottom border-secondary border-opacity-25">
+      <!-- CAPABILITY STRIP -->
+      <section class="capability-strip">
         <div class="container">
-          <div class="d-flex flex-wrap justify-content-around align-items-center gap-3 text-center small text-white-50 font-monospace">
-            <span><i class="fa-solid fa-microchip text-info me-1"></i> PLC LOGIC DESIGN</span>
-            <span><i class="fa-solid fa-bolt text-info me-1"></i> DOMESTIC &amp; INDUSTRIAL ELECTRICITY</span>
-            <span><i class="fa-solid fa-house-crack text-info me-1"></i> HOUSE CONSTRUCTION</span>
-            <span><i class="fa-solid fa-gauge-high text-info me-1"></i> ENERGY AUDITING</span>
-            <span><i class="fa-solid fa-file-contract text-info me-1"></i> DIGITAL SOPs</span>
+          <div class="row g-3 text-center text-lg-start">
+            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-microchip"></i> <span>PLC Automation</span></div></div>
+            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-bolt"></i> <span>Electrical Systems</span></div></div>
+            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-house"></i> <span>Civil Construction</span></div></div>
+            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-gauge-high"></i> <span>Energy Audits</span></div></div>
+            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-file-code"></i> <span>Digital SOPs</span></div></div>
           </div>
         </div>
       </section>
@@ -898,459 +1153,238 @@
       <!-- SERVICES SECTION -->
       <section id="services" class="section-spacing">
         <div class="container">
-          <div class="section-heading text-center mb-5">
-            <span class="eyebrow">Our Core Services</span>
-            <h2 class="fw-bold">Engineering, Electrical &amp; Civil Construction Services</h2>
-            <p class="text-muted mx-auto style-max-width" style="max-width: 720px;">
-              We provide full-spectrum technical capabilities—ranging from industrial automation and power grid installations to residential building construction and standard operating software.
-            </p>
+          <div class="section-heading text-center">
+            <h2>Core Services</h2>
+            <p>Full-spectrum technical capabilities designed for industrial operations and residential projects.</p>
           </div>
 
-          
-        </div>
-      </section>
-
-      <!-- SOLUTIONS & WHY CHOOSE US SECTION -->
-      <section id="solutions" class="section-spacing alt-bg border-top border-bottom">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <span class="eyebrow">Why Choose MERICoN</span>
-              <h2 class="fw-bold mb-3">Field-Tested Engineering Built Around Real Project Timelines</h2>
-              <p class="text-muted mb-4">
-                Whether constructing modern residential homes, installing high-efficiency electrical networks, or programming complex PLC automation lines, MERICoN brings deep technical domain knowledge and disciplined safety protocols.
-              </p>
-              <p class="text-muted mb-4">
-                Our multi-disciplinary engineering team operates seamlessly across civil construction sites and industrial manufacturing plants, delivering on-time handovers without compromise.
-              </p>
-
-              <ul class="check-list">
-                <li>Modular PLC/SCADA code compliant with IEC 61131-3 international standards.</li>
-                <li>Certified domestic and industrial electrical installation standards.</li>
-                <li>Architectural design, structural integrity, and house construction management.</li>
-                <li>Comprehensive power quality analysis with harmonic reduction solutions.</li>
-                <li>Direct engineer availability with rapid WhatsApp project coordination.</li>
-              </ul>
-
-              <div class="pt-2">
-                <a href="#contact" class="btn btn-primary rounded-pill px-4 me-2">Schedule Engineering Call</a>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="img-container shadow-lg" style="min-height: 400px; max-height: 460px;">
-                <img
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
-                  alt="MERICoN Engineering Field Team Working on Control Panel"
-                  onerror="this.onerror=null; this.src='https://via.placeholder.com/1000x750/0d1b2a/ffffff?text=MERICoN+Field+Engineers';"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WORK / PORTFOLIO GALLERY SECTION -->
-      <section id="work" class="section-spacing">
-        <div class="container">
-          <div class="section-heading text-center mb-5">
-            <span class="eyebrow">Our Projects &amp; Work</span>
-            <h2 class="fw-bold">Engineering &amp; Construction Portfolio</h2>
-            <p class="text-muted mx-auto" style="max-width: 650px;">
-              Explore how we have helped industrial facilities automate workflows, resolved electrical power bottlenecks, and constructed high-quality residential buildings.
-            </p>
-          </div>
-
-          <div class="row g-4">
-            <!-- Project 1 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="product-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Automated Packaging & Bottling Line')">
-                  <img
-                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-                    alt="Automated Packaging Bottling Line Project"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Automation+Project';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="card-body p-0">
-                  <span class="badge bg-primary-subtle text-primary mb-2">Automation &amp; PLC</span>
-                  <h3>Automated Packaging &amp; Bottling Line</h3>
-                  <p>
-                    Upgraded legacy relay controls to a unified Siemens PLC system paired with an interactive touchscreen HMI interface.
-                  </p>
-                  <p class="text-muted small">
-                    Achieved a 28% reduction in bottleneck stoppage delays and integrated safety interlocks across synchronized conveyor zones. Fully documented schematics provided.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project 2: Civil Construction Project -->
-            <div class="col-md-6 col-lg-4">
-              <article class="product-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', 'Modern Residential Villa Construction')">
-                  <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-                    alt="Modern Residential House Construction Completed Project"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=House+Construction+Project';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="card-body p-0">
-                  <span class="badge bg-warning-subtle text-dark mb-2">House Construction</span>
-                  <h3>Turnkey Modern Family House</h3>
-                  <p>
-                    Complete architectural construction, reinforced foundation framing, roof truss setup, and premium exterior finishing.
-                  </p>
-                  <p class="text-muted small">
-                    Delivered on schedule within budget, including complete domestic electrical installation, modern plumbing infrastructure, and outdoor paving.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="product-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80', 'Facility Power Factor Correction')">
-                  <img
-                    src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80"
-                    alt="Power Factor Correction Audit Setup"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Power+Audit+Project';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="card-body p-0">
-                  <span class="badge bg-success-subtle text-success mb-2">Energy Optimization</span>
-                  <h3>Facility Power Factor Correction</h3>
-                  <p>
-                    Executed full power analysis across a manufacturing plant, installing automatic capacitor banks and harmonic filters.
-                  </p>
-                  <p class="text-muted small">
-                    Lowered peak reactive power penalties by 82%, yielding a full financial payback on equipment within just 7 months of installation.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="row g-4">
+          <div class="service-grid">
             <!-- Service 1 -->
-            <div class="col-md-6 col-xl-4">
-              <article class="info-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80', 'PLC & Control Logic Architecture')">
-                  <img
-                    src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80"
-                    alt="PLC and Control Cabinet Engineering"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=PLC+Control+Logic';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="icon-box">
-                  <i class="fa-solid fa-gears"></i>
-                </div>
-                <h3>PLC &amp; Automation Architecture</h3>
-                <p>
-                  Custom PLC programming, SCADA/HMI design, and machine logic retrofits engineered for reliability and process stability.
-                </p>
-                <p class="text-muted small">
-                  We specialize in Siemens S7, Allen-Bradley, and Schneider platforms, providing fault-tolerant code structures that minimize downtime during operational glitches. Our engineers re-architect legacy relay systems into modular digital control panels.
-                </p>
-                <a href="#contact" class="text-link">Inquire about PLC Setup <i class="fa-solid fa-arrow-right"></i></a>
-              </article>
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+              <h3>PLC & Automation</h3>
+              <p>Custom PLC programming, SCADA/HMI design, and machine logic retrofits engineered for reliability and process stability. Siemens, Allen-Bradley, and Schneider platforms.</p>
+              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <!-- Service 2: Electrical Installations -->
-            <div class="col-md-6 col-xl-4">
-              <article class="info-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80', 'Domestic & Industrial Electrical Installations')">
-                  <img
-                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
-                    alt="Domestic and Industrial Electrical Wiring Setup"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Electrical+Installations';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="icon-box">
-                  <i class="fa-solid fa-bolt"></i>
-                </div>
-                <h3>Domestic &amp; Industrial Electricity</h3>
-                <p>
-                  Complete high &amp; low voltage electrical wiring, distribution board assembly, earthing setups, and site power infrastructure.
-                </p>
-                <p class="text-muted small">
-                  From complete house wiring and lighting installations to heavy industrial plant distribution cabinets, motor control centers (MCC), and backup generator integration, we guarantee full safety compliance and reliable energy flow.
-                </p>
-                <a href="#contact" class="text-link">Book Electrical Wiring <i class="fa-solid fa-arrow-right"></i></a>
-              </article>
+            <!-- Service 2 -->
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3>Domestic & Industrial Electricity</h3>
+              <p>Complete high & low voltage wiring, distribution boards, earthing systems, and site power infrastructure. Full safety compliance and reliable energy flow guaranteed.</p>
+              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <!-- Service 3: House Construction -->
-            <div class="col-md-6 col-xl-4">
-              <article class="info-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80', 'Civil & House Construction')">
-                  <img
-                    src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80"
-                    alt="House Building and Structural Construction Site"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=House+Construction';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="icon-box">
-                  <i class="fa-solid fa-trowel-bricks"></i>
-                </div>
-                <h3>Civil &amp; House Construction</h3>
-                <p>
-                  Turnkey house building, structural design, residential renovation, and commercial civil engineering construction.
-                </p>
-                <p class="text-muted small">
-                  We bring precision engineering to civil construction projects. Our civil team manages everything from site foundation works, concrete framing, roofing, and plumbing to interior finishing and full architectural handovers.
-                </p>
-                <a href="#contact" class="text-link">Start Construction Project <i class="fa-solid fa-arrow-right"></i></a>
-              </article>
+            <!-- Service 3 -->
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
+              <h3>Civil & House Construction</h3>
+              <p>Turnkey house building, structural design, and residential renovation. From foundation to interior finishing with premium architectural standards.</p>
+              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <!-- Service 4 -->
-            <div class="col-md-6 col-xl-4">
-              <article class="info-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80', 'Industrial Energy Audits')">
-                  <img
-                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
-                    alt="Energy Audit Power Measurement"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Energy+Audits';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="icon-box">
-                  <i class="fa-solid fa-chart-pie"></i>
-                </div>
-                <h3>Industrial Energy Audits</h3>
-                <p>
-                  Comprehensive power quality analysis, thermal assessments, and load optimization designed to drop electrical bills.
-                </p>
-                <p class="text-muted small">
-                  Our certified energy specialists inspect transformer loads, motor power factors, and compressed air lines to reveal hidden power waste. We deliver actionable ROI-backed technical audit reports that pinpoint immediate payback opportunities.
-                </p>
-                <a href="#contact" class="text-link">Request Energy Audit <i class="fa-solid fa-arrow-right"></i></a>
-              </article>
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <h3>Industrial Energy Audits</h3>
+              <p>Comprehensive power quality analysis and load optimization. Identify hidden power waste and implement ROI-backed efficiency improvements.</p>
+              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <!-- Service 5 -->
-            <div class="col-md-6 col-xl-4">
-              <article class="info-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80', 'Digital Standard Operating Procedures')">
-                  <img
-                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
-                    alt="Digital SOP Documentation & Process Management"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Digital+SOPs';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="icon-box">
-                  <i class="fa-solid fa-file-code"></i>
-                </div>
-                <h3>Digital Standard Operating Procedures</h3>
-                <p>
-                  Interactive, standardized operational procedures that streamline factory onboarding and eliminate human operator error.
-                </p>
-                <p class="text-muted small">
-                  We turn unstructured maintenance logs and tribal knowledge into clear, digital visual standard operating procedures accessible via tablets or printed floor binders. This guarantees uniform quality control and reduces technician training time.
-                </p>
-                <a href="#contact" class="text-link">Standardize Operations <i class="fa-solid fa-arrow-right"></i></a>
-              </article>
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-file-code"></i></div>
+              <h3>Digital SOPs & Documentation</h3>
+              <p>Standardized operational procedures that eliminate human error and streamline factory onboarding. Visual, tablet-accessible, and floor-ready.</p>
+              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <!-- Service 6: Preventive Maintenance -->
-            <div class="col-md-6 col-xl-4">
-              <article class="info-card h-100">
-                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80', 'Preventive Maintenance & Facility Audits')">
-                  <img
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
-                    alt="Facility Preventive Maintenance Inspection"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Maintenance+Services';"
-                  />
-                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
-                </div>
-                <div class="icon-box">
-                  <i class="fa-solid fa-wrench"></i>
-                </div>
-                <h3>Preventive Maintenance &amp; Upgrades</h3>
-                <p>
-                  Scheduled facility electrical inspections, mechanical maintenance, transformer testing, and control panel health checks.
-                </p>
-                <p class="text-muted small">
-                  Protect your physical investments. We establish routine maintenance contracts for commercial buildings, factories, and residential estates to identify equipment wear and electrical hazards before costly failures occur.
-                </p>
-                <a href="#contact" class="text-link">Schedule Site Inspection <i class="fa-solid fa-arrow-right"></i></a>
-              </article>
+            <!-- Service 6 -->
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+              <h3>Preventive Maintenance</h3>
+              <p>Scheduled facility inspections, electrical testing, and equipment audits. Identify wear and hazards before costly failures occur.</p>
+              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-          </div>
-
-          </div>
-
-          <!-- Gallery Notice -->
-          <div class="mt-5 p-4 rounded-4 text-center bg-light border border-dashed">
-            <h5 class="fw-bold mb-2"><i class="fa-solid fa-images text-primary me-2"></i>Have More Project Photos to Share?</h5>
-            <p class="text-muted small mb-3">Our team regularly updates site portfolio media. Contact us to request complete case studies or technical drawing reviews.</p>
-            <button class="btn btn-outline-primary btn-sm rounded-pill px-4" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Submit a Project Inquiry
-            </button>
           </div>
         </div>
       </section>
 
-      <!-- OUR TEAM SECTION -->
-      <section id="team" class="section-spacing alt-bg border-top border-bottom">
+      <!-- WHY CHOOSE US -->
+      <section id="why" class="section-spacing alt-bg">
         <div class="container">
-          <div class="section-heading text-center mb-5">
-            <span class="eyebrow">Our Team &amp; Leadership</span>
-            <h2 class="fw-bold">Meet the Engineers &amp; Construction Specialists</h2>
-            <p class="text-muted mx-auto" style="max-width: 700px;">
-              Our dedicated leadership team brings together decades of hands-on technical experience in industrial automation, energy auditing, electrical installations, and civil house construction.
-            </p>
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <div class="section-heading">
+                <h2>Why Choose MERICoN</h2>
+                <p style="font-size: 1rem; margin: 0;">Field-tested engineering built for real project timelines.</p>
+              </div>
+              <p class="text-muted">Whether constructing modern homes, installing electrical networks, or programming PLC systems, we bring deep technical knowledge and disciplined safety protocols.</p>
+
+              <ul class="value-list">
+                <li>IEC 61131-3 compliant PLC code and architecture</li>
+                <li>Certified electrical installation standards</li>
+                <li>Architectural design and structural engineering</li>
+                <li>Power quality analysis and harmonic solutions</li>
+                <li>Direct engineer availability via WhatsApp</li>
+                <li>On-time handovers without compromise</li>
+              </ul>
+
+              <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+            </div>
+
+            <div class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="MERICoN Engineering Team" style="width: 100%; border-radius: 12px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);" onerror="this.src='https://via.placeholder.com/1000x750/0d1b2a/ffffff?text=MERICoN+Field+Engineers';" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO SECTION -->
+      <section id="portfolio" class="section-spacing">
+        <div class="container">
+          <div class="section-heading text-center">
+            <h2>Recent Projects</h2>
+            <p>Industrial automation, residential construction, and electrical infrastructure delivered across the region.</p>
           </div>
 
-          <div class="row g-4 justify-content-center">
-            <!-- Member 1 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="team-card h-100">
-                <div class="team-img-wrapper">
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
-                    alt="Mupenzi Eric - Lead Automation & Systems Engineer"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Mupenzi+Eric';"
-                  />
-                </div>
-                <span class="team-role">Managing Director &amp; Lead Engineer</span>
+          <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+              <div class="project-image" onclick="openLightbox('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Automated Packaging Line')">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Packaging Line Project" onerror="this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Automation';" />
+                <span class="project-badge">Click to expand</span>
+              </div>
+              <div class="project-content">
+                <span class="project-category">Automation</span>
+                <h3>Automated Packaging & Bottling</h3>
+                <p>Siemens PLC retrofit with HMI touchscreen interface for unified control.</p>
+                <div class="project-result">✓ 28% reduction in stoppage delays | ✓ Safety interlocks integrated</div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+              <div class="project-image" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', 'Modern Family House')">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="House Construction Project" onerror="this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=House+Construction';" />
+                <span class="project-badge">Click to expand</span>
+              </div>
+              <div class="project-content">
+                <span class="project-category">Construction</span>
+                <h3>Turnkey Modern Family House</h3>
+                <p>Complete residential construction with electrical, plumbing, and finishing.</p>
+                <div class="project-result">✓ On-schedule delivery | ✓ Full domestic electrical installation</div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+              <div class="project-image" onclick="openLightbox('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80', 'Power Factor Correction')">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Power Audit Project" onerror="this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Energy+Audit';" />
+                <span class="project-badge">Click to expand</span>
+              </div>
+              <div class="project-content">
+                <span class="project-category">Energy</span>
+                <h3>Facility Power Factor Correction</h3>
+                <p>Full power analysis with automatic capacitor banks and harmonic filters.</p>
+                <div class="project-result">✓ 82% reduction in reactive power | ✓ 7-month payback period</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM SECTION -->
+      <section id="team" class="section-spacing alt-bg">
+        <div class="container">
+          <div class="section-heading text-center">
+            <h2>Our Leadership Team</h2>
+            <p>Decades of hands-on technical expertise in industrial automation, electrical engineering, and civil construction.</p>
+          </div>
+
+          <div class="team-grid">
+            <!-- Team 1 -->
+            <div class="team-card">
+              <div class="team-image">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Mupenzi Eric" onerror="this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Mupenzi+Eric';" />
+              </div>
+              <div class="team-content">
+                <span class="team-role">Managing Director</span>
                 <h3>Mupenzi Eric</h3>
-                <p>
-                  Expert in SCADA/PLC architecture, industrial control logic design, and operational automation strategy with over 10 years of site deployment experience.
-                </p>
+                <p>Lead automation engineer with 10+ years in SCADA/PLC architecture and industrial control systems.</p>
                 <div class="team-socials">
-                  <a href="mailto:mericon.engineering@gmail.com" aria-label="Email Eric"><i class="fa-regular fa-envelope"></i></a>
-                  <a href="#" class="whatsapp-trigger" data-type="general" aria-label="WhatsApp Eric"><i class="fa-brands fa-whatsapp"></i></a>
-                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Eric"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="mailto:mericon.engineering@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+                  <a href="#" class="whatsapp-trigger" data-type="general" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-              </article>
+              </div>
             </div>
 
-            <!-- Member 2 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="team-card h-100">
-                <div class="team-img-wrapper">
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
-                    alt="Mupenzi Eric - Lead Automation & Systems Engineer"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Mupenzi+Eric';"
-                  />
-                </div>
-                <span class="team-role">IT &amp; Operation Manager</span>
+            <!-- Team 2 -->
+            <div class="team-card">
+              <div class="team-image">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="MANZI Honore" onerror="this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=MANZI+Honore';" />
+              </div>
+              <div class="team-content">
+                <span class="team-role">Operations Manager</span>
                 <h3>MANZI Honore</h3>
-                <p>
-                  Certified energy auditor specializing in power quality logging, harmonic filter design, power factor correction, and industrial load management.
-                </p>
+                <p>Certified energy auditor specializing in power quality, harmonic filter design, and load management systems.</p>
                 <div class="team-socials">
-                  <a href="mailto:mericonengineering.co.rw@gmail.com" aria-label="Email MERICoN Integratd Engineering ltd"><i class="fa-regular fa-envelope"></i></a>
-                  <a href="#" class="whatsapp-trigger" data-type="general" aria-label="WhatsApp Jean-Paul"><i class="fa-brands fa-whatsapp"></i></a>
-                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Jean-Paul"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="mailto:mericonengineering.co.rw@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+                  <a href="#" class="whatsapp-trigger" data-type="general" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-              </article>
+              </div>
             </div>
-
           </div>
-
+        </div>
+      </section>
 
       <!-- PRODUCTS SECTION -->
-      <section id="products" class="section-spacing alt-bg border-top border-bottom">
+      <section id="products" class="section-spacing">
         <div class="container">
-          <div class="section-heading text-center mb-5">
-            <span class="eyebrow">Digital Products &amp; Toolkits</span>
-            <h2 class="fw-bold">Ready-to-Deploy Technical Resources for Engineers</h2>
-            <p class="text-muted mx-auto" style="max-width: 700px;">
-              Accelerate your engineering workflow with our commercially proven industrial calculators, PLC code templates, and SOP starter packs available for direct purchase.
-            </p>
+          <div class="section-heading text-center">
+            <h2>Digital Products & Tools</h2>
+            <p>Ready-to-deploy resources for engineers and facility managers.</p>
           </div>
 
-          <div class="row g-4">
+          <div class="product-grid">
             <!-- Product 1 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="product-card h-100">
-                <div class="product-icon-badge">PLC</div>
-                <h3>Industrial PLC Programming &amp; Logic Guide</h3>
-                <p>
-                  A complete practical handbook covering structured ladder logic, function block diagrams, analog signal scaling, and fault handling loops.
-                </p>
-                <p class="text-muted small">
-                  Includes real-world PLC ladder logic examples, state machine design patterns, and debugging cheat-sheets designed for field technicians working under pressure.
-                </p>
-                <a
-                  href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="text-link"
-                >
-                  Buy on Selar Store <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </article>
+            <div class="product-card">
+              <div class="product-badge">PLC</div>
+              <h3>PLC Programming Guide</h3>
+              <p>Complete handbook covering ladder logic, function blocks, analog scaling, and fault handling loops. Real-world examples and debugging cheat-sheets.</p>
+              <a href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2" target="_blank" rel="noreferrer" class="product-link">Buy on Selar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
 
             <!-- Product 2 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="product-card h-100">
-                <div class="product-icon-badge">SOP</div>
-                <h3>Commercial SOP Template Suite</h3>
-                <p>
-                  Fully editable Word &amp; PDF templates structured specifically for industrial maintenance, quality control, and workplace safety compliance.
-                </p>
-                <p class="text-muted small">
-                  Features ISO-aligned documentation layouts, visual procedure boxes, revision tracking tables, and safety precaution check-blocks ready to customize for your site.
-                </p>
-                <a
-                  href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="text-link"
-                >
-                  Buy on Selar Store <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </article>
+            <div class="product-card">
+              <div class="product-badge">SOP</div>
+              <h3>SOP Template Suite</h3>
+              <p>Editable Word & PDF templates for industrial maintenance, quality control, and safety compliance. ISO-aligned layouts with revision tracking.</p>
+              <a href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2" target="_blank" rel="noreferrer" class="product-link">Buy on Selar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
 
             <!-- Product 3 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="product-card h-100">
-                <div class="product-icon-badge">XLS</div>
-                <h3>Industrial Engineering Excel Calculators</h3>
-                <p>
-                  Pre-configured, macro-enabled spreadsheets for motor cable sizing, power factor calculation, transformer load balance, and compressed air leakage cost analysis.
-                </p>
-                <p class="text-muted small">
-                  Save hours on calculations. Built with built-in lookup formulas, error validation, and printable engineering summary sheets.
-                </p>
-                <a
-                  href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="text-link"
-                >
-                  Buy on Selar Store <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </article>
+            <div class="product-card">
+              <div class="product-badge">XLS</div>
+              <h3>Engineering Calculators</h3>
+              <p>Pre-configured Excel spreadsheets for motor cable sizing, power factor calculations, transformer load balance, and cost analysis.</p>
+              <a href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2" target="_blank" rel="noreferrer" class="product-link">Buy on Selar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CTA BANNER -->
-      <section class="section-spacing cta-banner">
+      <!-- CTA SECTION -->
+      <section class="section-spacing cta-section">
         <div class="container">
-          <div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+          <div class="cta-content">
             <div>
-              <span class="eyebrow eyebrow-dark">Need a Tailored System?</span>
-              <h2 class="mb-2 text-white fw-bold">Let's solve your automation, electrical, or house construction project.</h2>
-              <p class="text-white-50 mb-0">Connect directly with our engineering team to discuss scope, cost estimates, and site scheduling.</p>
+              <h2>Need an Engineering Solution?</h2>
+              <p>Connect with our team to discuss scope, timelines, and project costs.</p>
             </div>
-            <button class="btn btn-info btn-lg rounded-pill px-4 whatsapp-trigger flex-shrink-0" data-type="project">
+            <button class="btn btn-info btn-lg flex-shrink-0 whatsapp-trigger" data-type="project">
               <i class="fa-brands fa-whatsapp me-2"></i> Start Consultation
             </button>
           </div>
@@ -1358,93 +1392,87 @@
       </section>
 
       <!-- CONTACT SECTION -->
-      <section id="contact" class="section-spacing contact-section">
+      <section id="contact" class="section-spacing alt-bg">
         <div class="container">
-          <div class="row g-5 align-items-start">
+          <div class="row g-5">
+            <!-- Contact Info -->
             <div class="col-lg-5">
-              <span class="eyebrow">Get in Touch</span>
-              <h2 class="fw-bold mb-3">Request a Technical Consultation or Project Quote</h2>
-              <p class="text-muted mb-4">
-                Share your house construction plan, electrical installation needs, automation challenges, or product inquiries with our team. We respond to all technical requests within 24 business hours.
-              </p>
+              <h2 class="mb-3">Get in Touch</h2>
+              <p class="text-muted mb-4">Share your project needs with our team. We respond to all technical inquiries within 24 business hours.</p>
 
-              <div class="contact-points">
-                <div class="contact-item">
-                  <strong>Email Inquiry</strong>
-                  <a href="mailto:mericonengineering.co.rw@gmail.com"><i class="fa-regular fa-envelope me-2 text-primary"></i>mericonengineering.co.rw@gmail.com</a>
+              <div class="contact-info-grid">
+                <div class="contact-info">
+                  <strong>Email</strong>
+                  <a href="mailto:mericonengineering.co.rw@gmail.com">
+                    <i class="fa-regular fa-envelope"></i> mericonengineering.co.rw@gmail.com
+                  </a>
                 </div>
-                <div class="contact-item">
-                  <strong>Direct WhatsApp Line</strong>
-                  <a href="#" class="whatsapp-trigger" data-type="contact"><i class="fa-brands fa-whatsapp me-2 text-success"></i>Message MERICoN Engineering</a>
+
+                <div class="contact-info">
+                  <strong>WhatsApp</strong>
+                  <a href="#" class="whatsapp-trigger" data-type="contact">
+                    <i class="fa-brands fa-whatsapp"></i> Message Us
+                  </a>
                 </div>
-                <div class="contact-item">
-                  <strong>Direct Call/SMS</strong>
-                  <a href="tel:+250 799 400 286"><i class="fa-solid fa-phone me-2 text-success"></i>+250 799 400 286</a>
-                  <a href="tel:+250 788 284 487"><i class="fa-solid fa-phone me-2 text-success"></i>+250 788 284 487</a>
+
+                <div class="contact-info">
+                  <strong>Phone</strong>
+                  <a href="tel:+250 799 400 286">
+                    <i class="fa-solid fa-phone"></i> +250 799 400 286
+                  </a>
+                  <a href="tel:+250 788 284 487" style="margin-top: 6px;">
+                    <i class="fa-solid fa-phone"></i> +250 788 284 487
+                  </a>
                 </div>
-                <div class="contact-item">
+
+                <div class="contact-info">
                   <strong>Office Hours</strong>
-                  <span class="fw-semibold">Monday – Saturday: 8:00 AM – 6:00 PM (CAT)</span>
+                  <span style="font-weight: 500; color: var(--text-dark);">Mon–Sat: 8:00 AM – 6:00 PM (CAT)</span>
                 </div>
               </div>
             </div>
 
+            <!-- Contact Form -->
             <div class="col-lg-7">
               <form id="contactForm" class="contact-form" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6">
-                    <label>
-                      <span>Full Name *</span>
-                      <input type="text" name="name" id="formName" placeholder="e.g. John Doe" required />
-                    </label>
+                    <label>Full Name *<input type="text" name="name" id="formName" placeholder="John Doe" required /></label>
                   </div>
                   <div class="col-md-6">
-                    <label>
-                      <span>Company / Client Name *</span>
-                      <input type="text" name="company" id="formCompany" placeholder="e.g. Personal Project or Firm Ltd" required />
-                    </label>
+                    <label>Company *<input type="text" name="company" id="formCompany" placeholder="Your Company" required /></label>
                   </div>
                   <div class="col-md-6">
-                    <label>
-                      <span>Email Address *</span>
-                      <input type="email" name="email" id="formEmail" placeholder="you@company.com" required />
-                    </label>
+                    <label>Email *<input type="email" name="email" id="formEmail" placeholder="you@company.com" required /></label>
                   </div>
                   <div class="col-md-6">
-                    <label>
-                      <span>Phone Number *</span>
-                      <input type="tel" name="phone" id="formPhone" placeholder="+250 788 000 000" required />
-                    </label>
+                    <label>Phone *<input type="tel" name="phone" id="formPhone" placeholder="+250 788 000 000" required /></label>
                   </div>
                   <div class="col-12">
-                    <label>
-                      <span>Project Category *</span>
+                    <label>Service Interest *
                       <select name="projectType" id="formProjectType" required>
-                        <option value="">Select a service focus</option>
-                        <option value="PLC Programming & Automation">PLC Programming &amp; Automation</option>
-                        <option value="Domestic & Industrial Electrical Wiring">Domestic &amp; Industrial Electrical Wiring</option>
-                        <option value="Civil & House Construction">Civil &amp; House Construction</option>
+                        <option value="">Select service</option>
+                        <option value="PLC Programming & Automation">PLC Programming & Automation</option>
+                        <option value="Domestic & Industrial Electrical">Domestic & Industrial Electrical</option>
+                        <option value="Civil & House Construction">Civil & House Construction</option>
                         <option value="Industrial Energy Audit">Industrial Energy Audit</option>
-                        <option value="SOP Systems & Documentation">SOP Systems &amp; Documentation</option>
-                        <option value="General Technical Consultation">General Technical Consultation</option>
+                        <option value="SOP Systems & Documentation">SOP Systems & Documentation</option>
+                        <option value="General Consultation">General Consultation</option>
                       </select>
                     </label>
                   </div>
                   <div class="col-12">
-                    <label>
-                      <span>Project Scope or Message *</span>
-                      <textarea name="message" id="formMessage" rows="4" placeholder="Briefly describe your building site, electrical needs, equipment, or operational goals..." required></textarea>
-                    </label>
+                    <label>Project Details *<textarea name="message" id="formMessage" rows="4" placeholder="Describe your project scope..." required></textarea></label>
                   </div>
                 </div>
 
-                <div class="consent-row mt-3">
-                  <input type="checkbox" id="consent" name="consent" required />
-                  <label for="consent">I consent to MERICoN contacting me regarding this technical inquiry.</label>
+                <div class="form-check mt-3">
+                  <input class="form-check-input" type="checkbox" id="consent" name="consent" required />
+                  <label class="form-check-label" for="consent">I consent to MERICoN contacting me about this inquiry.</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100 rounded-pill mt-4 py-3 fw-bold">
-                  <i class="fa-solid fa-paper-plane me-2"></i> Send Technical Inquiry
+                <button type="submit" class="btn btn-primary w-100 mt-4 py-3 fw-bold">
+                  <i class="fa-solid fa-paper-plane me-2"></i> Send Inquiry
                 </button>
                 <p id="formStatus" class="form-status mt-3 mb-0 text-center fw-semibold" aria-live="polite"></p>
               </form>
@@ -1454,59 +1482,59 @@
       </section>
     </main>
 
-    <!-- LIGHTBOX MODAL -->
-    <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header border-0 pb-0">
-            <h6 class="modal-title font-monospace fw-bold" id="lightboxTitle">Project Preview</h6>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center p-3">
-            <img id="lightboxImage" src="" class="img-fluid rounded-3 shadow" alt="Project Large Preview" />
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
         <div class="row gy-4 mb-4">
           <div class="col-lg-6">
-            <strong>MERICoN Integrated Engineering Ltd.</strong>
-            <p class="small text-white-50 mt-2 style-max-width" style="max-width: 480px;">
-              Empowering facilities, commercial sites, and residential homeowners with cutting-edge automation, electrical wiring, house construction, and energy efficiency solutions.
-            </p>
+            <div class="footer-content">
+              <strong>MERICoN Integrated Engineering Ltd.</strong>
+              <p>Empowering facilities and homeowners with cutting-edge automation, electrical systems, house construction, and energy efficiency solutions across Rwanda and East Africa.</p>
+            </div>
           </div>
           <div class="col-lg-6 text-lg-end">
-            <div class="footer-links d-flex gap-3 flex-wrap justify-content-lg-end mb-3">
+            <div class="footer-links mb-3 justify-content-lg-end">
               <a href="#services">Services</a>
-              <a href="#solutions">Solutions</a>
-              <a href="#work">Our Work</a>
-              <a href="#team">Our Team</a>
-             <!-- <a href="#calculator">ROI Calculator</a> -->
+              <a href="#why">Why Us</a>
+              <a href="#portfolio">Portfolio</a>
+              <a href="#team">Team</a>
               <a href="#products">Products</a>
               <a href="#contact">Contact</a>
             </div>
-            <p class="small text-white-50 mb-0">&copy; <span id="currentYear"></span> MERICoN Integrated Engineering Ltd. All rights reserved.</p>
           </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="currentYear"></span> MERICoN Integrated Engineering Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
+    <!-- LIGHTBOX MODAL -->
+    <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h6 class="modal-title" id="lightboxTitle">Project Preview</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center p-3">
+            <img id="lightboxImage" src="" class="img-fluid rounded" alt="Project" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap & Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Embedded Application Logic -->
     <script>
       let lightboxModalInstance = null;
 
       document.addEventListener('DOMContentLoaded', function () {
-        // Dynamic Year Update
+        // Year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Header Resize on Scroll
+        // Header scroll effect
         const headerEl = document.getElementById('siteHeader');
         window.addEventListener('scroll', function () {
           if (window.scrollY > 40) {
@@ -1516,7 +1544,7 @@
           }
         });
 
-        // Theme Switcher Toggle (Dark / Light Mode)
+        // Theme toggle
         const themeToggleBtn = document.getElementById('themeToggle');
         if (themeToggleBtn) {
           themeToggleBtn.addEventListener('click', function () {
@@ -1528,57 +1556,26 @@
           });
         }
 
-        // Initialize Lightbox Modal
+        // Lightbox
         const lightboxModalEl = document.getElementById('imageLightboxModal');
         if (lightboxModalEl) {
           lightboxModalInstance = new bootstrap.Modal(lightboxModalEl);
         }
 
-        // ROI Calculator Logic
-        const motorKw = document.getElementById('motorKw');
-        const opHours = document.getElementById('opHours');
-        const tariff = document.getElementById('tariff');
-        const efficiencyGain = document.getElementById('efficiencyGain');
-        const annualSavingsDisplay = document.getElementById('annualSavings');
-
-        function calculateSavings() {
-          const kw = parseFloat(motorKw.value) || 0;
-          const hours = parseFloat(opHours.value) || 0;
-          const rate = parseFloat(tariff.value) || 0;
-          const gain = parseFloat(efficiencyGain.value) || 0;
-
-          // Annual kWh = kw * hours * 365
-          const annualKwh = kw * hours * 365;
-          const annualCost = annualKwh * rate;
-          const savings = annualCost * gain;
-
-          annualSavingsDisplay.textContent = '$' + Math.round(savings).toLocaleString() + ' USD / yr';
-        }
-
-        if (motorKw) {
-          [motorKw, opHours, tariff, efficiencyGain].forEach(element => {
-            element.addEventListener('input', calculateSavings);
-          });
-          calculateSavings();
-        }
-
-        // WhatsApp Direct Integration
+        // WhatsApp
         const whatsappButtons = document.querySelectorAll('.whatsapp-trigger');
-        const whatsappNumber = '250788284487'; // Replace with actual company phone number
+        const whatsappNumber = '250788284487';
 
         whatsappButtons.forEach(button => {
           button.addEventListener('click', function (e) {
             e.preventDefault();
             const type = this.getAttribute('data-type');
-            let text = 'Hello MERICoN Engineering team, I would like to inquire about your services.';
+            let text = 'Hello MERICoN Engineering, I would like to inquire about your services.';
 
             if (type === 'project') {
-              text = 'Hello MERICoN Engineering, I am interested in starting a project review for automation, electrical wiring, or house construction.';
-            } else if (type === 'calc') {
-              const kw = motorKw ? motorKw.value : '150';
-              text = `Hello MERICoN Engineering, I calculated an energy savings potential for a ${kw}kW motor system on your website and would like an official site audit.`;
+              text = 'Hello MERICoN Engineering, I am interested in starting a project review.';
             } else if (type === 'contact') {
-              text = 'Hello MERICoN Engineering, I have a technical inquiry regarding your engineering and construction solutions.';
+              text = 'Hello MERICoN Engineering, I have a technical inquiry.';
             }
 
             const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
@@ -1586,7 +1583,7 @@
           });
         });
 
-        // Contact Form Handling
+        // Contact form
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
 
@@ -1596,21 +1593,18 @@
 
             if (!contactForm.checkValidity()) {
               contactForm.classList.add('was-validated');
-              formStatus.textContent = 'Please fill out all required fields accurately.';
-              formStatus.className = 'form-status mt-3 mb-0 text-center text-danger font-monospace';
+              formStatus.textContent = 'Please fill all required fields.';
+              formStatus.className = 'form-status mt-3 mb-0 text-center text-danger';
               return;
             }
 
             const name = document.getElementById('formName').value;
-            const projectType = document.getElementById('formProjectType').value;
-
-            // Simulate Form Submission
-            formStatus.textContent = 'Transmitting your inquiry...';
-            formStatus.className = 'form-status mt-3 mb-0 text-center text-primary font-monospace';
+            formStatus.textContent = 'Sending your inquiry...';
+            formStatus.className = 'form-status mt-3 mb-0 text-center text-primary';
 
             setTimeout(() => {
-              formStatus.textContent = `Thank you, ${name}! Your inquiry regarding "${projectType}" has been received. Our team will contact you shortly.`;
-              formStatus.className = 'form-status mt-3 mb-0 text-center text-success font-monospace';
+              formStatus.textContent = `Thank you, ${name}! Your inquiry has been received. We'll contact you shortly.`;
+              formStatus.className = 'form-status mt-3 mb-0 text-center text-success';
               contactForm.reset();
               contactForm.classList.remove('was-validated');
             }, 1200);
@@ -1618,13 +1612,10 @@
         }
       });
 
-      // Lightbox trigger function
       function openLightbox(imgSrc, titleText) {
-        const imgEl = document.getElementById('lightboxImage');
-        const titleEl = document.getElementById('lightboxTitle');
-        if (imgEl && titleEl && lightboxModalInstance) {
-          imgEl.src = imgSrc;
-          titleEl.textContent = titleText || 'Project Image Preview';
+        if (lightboxModalInstance) {
+          document.getElementById('lightboxImage').src = imgSrc;
+          document.getElementById('lightboxTitle').textContent = titleText || 'Project Image';
           lightboxModalInstance.show();
         }
       }
