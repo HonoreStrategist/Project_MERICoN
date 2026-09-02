@@ -1,0 +1,1756 @@
+0<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERICoN Integrated Engineering Ltd. | Automation, Energy Audits & Construction</title>
+    <meta
+      name="description"
+      content="MERICoN Integrated Engineering Ltd. delivers industrial automation, PLC programming, energy audits, house construction, electrical installations, and digital productivity tools."
+    />
+    <meta
+      name="keywords"
+      content="MERICoN, industrial automation, PLC programming, energy audits, SOP templates, house construction, domestic electrical installation, industrial electrical, engineering Rwanda"
+    />
+    <meta name="author" content="MERICoN Integrated Engineering Ltd." />
+    <meta property="og:title" content="MERICoN Integrated Engineering Ltd." />
+    <meta
+      property="og:description"
+      content="Automation solutions, energy audits, civil house construction, and electrical installation engineering."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0d1b2a" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --brand-navy: #0d1b2a;
+        --brand-slate: #1b263b;
+        --brand-accent: #00e5ff;
+        --brand-blue: #0077b6;
+        --brand-light-blue: #e0f1f7;
+        --text-main: #2b2d42;
+        --text-muted: #6c757d;
+        --bg-body: #ffffff;
+        --bg-alt: #f8f9fa;
+        --card-bg: #ffffff;
+        --card-border: rgba(13, 27, 42, 0.08);
+        --nav-bg: #ffffff;
+        --input-bg: #ffffff;
+        --input-border: #dee2e6;
+      }
+
+      /* Dark Theme Variable Overrides */
+      body.dark-mode {
+        --brand-navy: #080f18;
+        --brand-slate: #101926;
+        --text-main: #e2e8f0;
+        --text-muted: #94a3b8;
+        --bg-body: #0a111c;
+        --bg-alt: #0f172a;
+        --card-bg: #111c2d;
+        --card-border: rgba(255, 255, 255, 0.1);
+        --nav-bg: #080f18;
+        --input-bg: #162235;
+        --input-border: #2a3b53;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; /* Prevents sticky navbar from covering section titles */
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text-main);
+        background-color: var(--bg-body);
+        overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      h1, h2, h3, h4, .brand-font {
+        letter-spacing: -0.02em;
+      }
+
+      /* Header & Nav Styling - White Nav with Dark Blue Bottom Border */
+      .site-header {
+        background-color: var(--nav-bg);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+        border-bottom: 3px solid #0d1b2a; /* Dark Blue Bottom Border */
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        padding: 6px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      }
+
+      .site-header.scrolled {
+        padding: 2px 0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        border-bottom-color: #0077b6;
+      }
+
+      body.dark-mode .site-header {
+        border-bottom: 3px solid var(--brand-accent);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .brand-mark {
+        background: linear-gradient(135deg, var(--brand-navy), var(--brand-blue));
+        color: #ffffff;
+        font-weight: 900;
+        padding: 4px 10px;
+        border-radius: 8px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      body.dark-mode .brand-mark {
+        background: linear-gradient(135deg, var(--brand-accent), var(--brand-blue));
+        color: #0d1b2a;
+      }
+
+      .site-header.scrolled .brand-mark {
+        padding: 3px 8px;
+        font-size: 0.9rem;
+      }
+
+      .brand-copy {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+
+      .brand-copy strong {
+        color: #0d1b2a;
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+        transition: font-size 0.3s ease;
+      }
+
+      body.dark-mode .brand-copy strong {
+        color: #ffffff;
+      }
+
+      .site-header.scrolled .brand-copy strong {
+        font-size: 1rem;
+      }
+
+      .brand-copy small {
+        color: var(--brand-blue);
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        font-weight: 700;
+      }
+
+      body.dark-mode .brand-copy small {
+        color: var(--brand-accent);
+      }
+
+      .site-header.scrolled .brand-copy small {
+        display: none; /* Hide subtitle on scroll for slim profile */
+      }
+
+      .nav-link {
+        color: #0d1b2a !important;
+        font-weight: 600;
+        font-size: 0.875rem;
+        padding: 0.4rem 0.65rem !important;
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      body.dark-mode .nav-link {
+        color: rgba(255, 255, 255, 0.88) !important;
+      }
+
+      .nav-link:hover {
+        color: var(--brand-blue) !important;
+        transform: translateY(-1px);
+      }
+
+      body.dark-mode .nav-link:hover {
+        color: var(--brand-accent) !important;
+      }
+
+      .theme-btn {
+        background: rgba(13, 27, 42, 0.06);
+        color: #0d1b2a;
+        border: 1px solid rgba(13, 27, 42, 0.2);
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .theme-btn:hover {
+        background: #0d1b2a;
+        color: #ffffff;
+        border-color: #0d1b2a;
+      }
+
+      body.dark-mode .theme-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--brand-accent);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      body.dark-mode .theme-btn:hover {
+        background: rgba(0, 229, 255, 0.2);
+        color: #ffffff;
+        border-color: var(--brand-accent);
+      }
+
+      /* Eyebrow badge */
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.825rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--brand-blue);
+        background: rgba(0, 119, 182, 0.12);
+        padding: 6px 16px;
+        border-radius: 50px;
+        margin-bottom: 1rem;
+      }
+
+      body.dark-mode .eyebrow {
+        color: var(--brand-accent);
+        background: rgba(0, 229, 255, 0.15);
+      }
+
+      .eyebrow-dark {
+        color: var(--brand-accent);
+        background: rgba(0, 229, 255, 0.15);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 60%, #003554 100%);
+        color: #ffffff;
+        padding: 70px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, rgba(0,0,0,0) 70%);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .hero-stats {
+        margin-top: 2rem;
+      }
+
+      .stat-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease;
+      }
+
+      .stat-box:hover {
+        transform: translateY(-5px);
+        border-color: var(--brand-accent);
+      }
+
+      .stat-box strong {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--brand-accent);
+      }
+
+      .stat-box span {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Photo Container & Image Styling */
+      .img-container {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background-color: #1b263b;
+      }
+
+      .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .img-container:hover img {
+        transform: scale(1.04);
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .hero-main-img {
+        min-height: 380px;
+        max-height: 420px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        border: 2px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .glass-card {
+        background: rgba(13, 27, 42, 0.88);
+        border: 1px solid rgba(0, 229, 255, 0.3);
+        backdrop-filter: blur(12px);
+        border-radius: 12px;
+        padding: 12px 18px;
+        position: absolute;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 10;
+      }
+
+      .mini-card {
+        top: 20px;
+        right: -20px;
+      }
+
+      .bottom-card {
+        bottom: 20px;
+        left: -20px;
+        top: auto;
+      }
+
+      .mini-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: var(--brand-accent);
+        display: block;
+        letter-spacing: 1px;
+      }
+
+      .glass-card strong {
+        color: #ffffff;
+        font-size: 0.9rem;
+      }
+
+      /* Section Common */
+      .section-spacing {
+        padding: 80px 0;
+      }
+
+      .alt-bg {
+        background-color: var(--bg-alt);
+      }
+
+      /* Cards Styling */
+      .info-card, .product-card, .team-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      }
+
+      .info-card:hover, .product-card:hover, .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(13, 27, 42, 0.12);
+        border-color: rgba(0, 119, 182, 0.4);
+      }
+
+      .card-img-wrapper {
+        height: 200px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        position: relative;
+        cursor: pointer;
+        background-color: #1b263b;
+      }
+
+      .card-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .card-img-wrapper:hover img {
+        transform: scale(1.06);
+      }
+
+      .img-zoom-badge {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(13, 27, 42, 0.75);
+        color: #fff;
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card-img-wrapper:hover .img-zoom-badge {
+        opacity: 1;
+      }
+
+      .icon-box {
+        width: 54px;
+        height: 54px;
+        background: var(--brand-light-blue);
+        color: var(--brand-blue);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      body.dark-mode .icon-box {
+        background: rgba(0, 229, 255, 0.15);
+        color: var(--brand-accent);
+      }
+
+      .product-icon-badge {
+        width: 50px;
+        height: 50px;
+        background: var(--brand-slate);
+        color: var(--brand-accent);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      .info-card h3, .product-card h3, .team-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--text-main);
+      }
+
+      .info-card p, .product-card p, .team-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Team Card Specifics */
+      .team-img-wrapper {
+        height: 250px;
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 18px;
+        position: relative;
+        background-color: #1b263b;
+      }
+
+      .team-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.4s ease;
+      }
+
+      .team-card:hover .team-img-wrapper img {
+        transform: scale(1.05);
+      }
+
+      .team-role {
+        font-size: 0.825rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--brand-blue);
+        letter-spacing: 0.8px;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      body.dark-mode .team-role {
+        color: var(--brand-accent);
+      }
+
+      .team-socials {
+        display: flex;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 15px;
+      }
+
+      .team-socials a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(0, 119, 182, 0.1);
+        color: var(--brand-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+      }
+
+      body.dark-mode .team-socials a {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--brand-accent);
+      }
+
+      .team-socials a:hover {
+        background: var(--brand-blue);
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      .text-link {
+        color: var(--brand-blue);
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: auto;
+        padding-top: 15px;
+        transition: gap 0.2s ease;
+      }
+
+      body.dark-mode .text-link {
+        color: var(--brand-accent);
+      }
+
+      .text-link:hover {
+        gap: 10px;
+      }
+
+      /* Check List */
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+      }
+
+      .check-list li {
+        position: relative;
+        padding-left: 36px;
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 1.05rem;
+      }
+
+      .check-list li::before {
+        content: '\f00c';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 24px;
+        height: 24px;
+        background: rgba(0, 119, 182, 0.12);
+        color: var(--brand-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+      }
+
+      body.dark-mode .check-list li::before {
+        background: rgba(0, 229, 255, 0.15);
+        color: var(--brand-accent);
+      }
+
+      /* Interactive ROI Calculator Section */
+      .calc-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        border: 1px solid var(--card-border);
+      }
+
+      .calc-result-box {
+        background: #0d1b2a;
+        color: #ffffff;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      .calc-result-box .val {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--brand-accent);
+      }
+
+      /* CTA Banner */
+      .cta-banner {
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        color: #ffffff;
+      }
+
+      .cta-box {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Contact Form */
+      .contact-section {
+        background-color: var(--bg-body);
+      }
+
+      .contact-form {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        padding: 36px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      }
+
+      .contact-form label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: var(--text-main);
+        margin-bottom: 6px;
+      }
+
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea {
+        margin-top: 6px;
+        padding: 12px 16px;
+        border: 1px solid var(--input-border);
+        background-color: var(--input-bg);
+        color: var(--text-main);
+        border-radius: 10px;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+      }
+
+      .contact-form input:focus,
+      .contact-form select:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--brand-blue);
+        box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+      }
+
+      .consent-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .contact-item {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-item strong {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: var(--brand-blue);
+        letter-spacing: 1px;
+      }
+
+      body.dark-mode .contact-item strong {
+        color: var(--brand-accent);
+      }
+
+      .contact-item a {
+        color: var(--text-main);
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: 4px;
+      }
+
+      .contact-item a:hover {
+        color: var(--brand-blue);
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: #080f18;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 50px 0 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .site-footer strong {
+        color: #ffffff;
+        font-size: 1.1rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--brand-accent);
+      }
+
+      /* Custom Modal Styles for Gallery */
+      .modal-content {
+        border-radius: 16px;
+        overflow: hidden;
+        background-color: var(--card-bg);
+        color: var(--text-main);
+      }
+
+      @media (max-width: 991px) {
+        .mini-card, .bottom-card {
+          position: static;
+          margin-top: 15px;
+        }
+        .hero-visual {
+          margin-top: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation Bar - White Background with Dark Blue Bottom Border -->
+    <header class="site-header" id="siteHeader">
+      <nav class="navbar navbar-expand-lg navbar-light container py-1">
+        <div class="container-fluid px-0">
+          <a href="#top" class="navbar-brand d-flex align-items-center gap-2" aria-label="MERICoN home">
+            <img src="MERICoN/MERICON LOGO OG.jpg" height  = "60px", width = "auto" alt="">
+          </a>
+
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <div class="mx-auto nav-center">
+              <ul class="navbar-nav gap-lg-1">
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#work">Our Work</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="#calculator">ROI Calculator</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 flex-wrap mt-2 mt-lg-0">
+              <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle dark/light theme">
+                <i class="fa-solid fa-moon"></i> <span>Dark</span>
+              </button>
+              <a href="#contact" class="btn btn-outline-dark btn-sm rounded-pill px-3 py-1 text-nowrap fw-semibold" style="font-size:0.8rem;">Book Consult</a>
+              <button class="btn btn-primary btn-sm rounded-pill px-3 py-1 text-nowrap whatsapp-trigger" data-type="general" style="font-size:0.8rem;">
+                <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-6">
+              <span class="eyebrow eyebrow-dark">Automation • Energy Audits • House Construction</span>
+              <h1 class="display-5 fw-bold mb-3">Precision Automation, Civil Construction &amp; Electrical Engineering Solutions.</h1>
+              <p class="lead text-white-50 mb-4">
+                MERICoN Integrated Engineering Ltd. delivers end-to-end industrial automation, power quality audits, domestic &amp; industrial electrical installations, and modern house construction services across Rwanda and East Africa.
+              </p>
+
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">Request Project Review</a>
+                <a href="#products" class="btn btn-outline-light btn-lg rounded-pill px-4">Browse Digital Products</a>
+              </div>
+
+              <div class="hero-stats row g-3">
+                <div class="col-4">
+                  <div class="stat-box">
+                    <strong>24/7</strong>
+                    <span>Support Mindset</span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="stat-box">
+                    <strong>+35%</strong>
+                    <span>Efficiency Gain</span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="stat-box">
+                    <strong>100%</strong>
+                    <span>Turnkey Quality</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="hero-visual">
+                <!-- HERO IMAGE -->
+                <div class="img-container hero-main-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
+                    alt="Industrial Automation Control Room Panel"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x800/0d1b2a/00e5ff?text=MERICoN+Industrial+Engineering';"
+                  />
+                </div>
+
+                <div class="mini-card glass-card">
+                  <span class="mini-label"><i class="fa-solid fa-chart-line me-1"></i> System Visibility</span>
+                  <strong>96.4% Operational Up-time</strong>
+                </div>
+
+                <div class="mini-card bottom-card glass-card">
+                  <span class="mini-label"><i class="fa-solid fa-house-chimney me-1"></i> Civil &amp; Electrical</span>
+                  <strong>Residential &amp; Factory Projects</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Strip -->
+      <section class="bg-dark text-white py-3 border-bottom border-secondary border-opacity-25">
+        <div class="container">
+          <div class="d-flex flex-wrap justify-content-around align-items-center gap-3 text-center small text-white-50 font-monospace">
+            <span><i class="fa-solid fa-microchip text-info me-1"></i> PLC LOGIC DESIGN</span>
+            <span><i class="fa-solid fa-bolt text-info me-1"></i> DOMESTIC &amp; INDUSTRIAL ELECTRICITY</span>
+            <span><i class="fa-solid fa-house-crack text-info me-1"></i> HOUSE CONSTRUCTION</span>
+            <span><i class="fa-solid fa-gauge-high text-info me-1"></i> ENERGY AUDITING</span>
+            <span><i class="fa-solid fa-file-contract text-info me-1"></i> DIGITAL SOPs</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section id="services" class="section-spacing">
+        <div class="container">
+          <div class="section-heading text-center mb-5">
+            <span class="eyebrow">Our Core Services</span>
+            <h2 class="fw-bold">Engineering, Electrical &amp; Civil Construction Services</h2>
+            <p class="text-muted mx-auto style-max-width" style="max-width: 720px;">
+              We provide full-spectrum technical capabilities—ranging from industrial automation and power grid installations to residential building construction and standard operating software.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-md-6 col-xl-4">
+              <article class="info-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80', 'PLC & Control Logic Architecture')">
+                  <img
+                    src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80"
+                    alt="PLC and Control Cabinet Engineering"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=PLC+Control+Logic';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-gears"></i>
+                </div>
+                <h3>PLC &amp; Automation Architecture</h3>
+                <p>
+                  Custom PLC programming, SCADA/HMI design, and machine logic retrofits engineered for reliability and process stability.
+                </p>
+                <p class="text-muted small">
+                  We specialize in Siemens S7, Allen-Bradley, and Schneider platforms, providing fault-tolerant code structures that minimize downtime during operational glitches. Our engineers re-architect legacy relay systems into modular digital control panels.
+                </p>
+                <a href="#contact" class="text-link">Inquire about PLC Setup <i class="fa-solid fa-arrow-right"></i></a>
+              </article>
+            </div>
+
+            <!-- Service 2: Electrical Installations -->
+            <div class="col-md-6 col-xl-4">
+              <article class="info-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80', 'Domestic & Industrial Electrical Installations')">
+                  <img
+                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+                    alt="Domestic and Industrial Electrical Wiring Setup"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Electrical+Installations';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3>Domestic &amp; Industrial Electricity</h3>
+                <p>
+                  Complete high &amp; low voltage electrical wiring, distribution board assembly, earthing setups, and site power infrastructure.
+                </p>
+                <p class="text-muted small">
+                  From complete house wiring and lighting installations to heavy industrial plant distribution cabinets, motor control centers (MCC), and backup generator integration, we guarantee full safety compliance and reliable energy flow.
+                </p>
+                <a href="#contact" class="text-link">Book Electrical Wiring <i class="fa-solid fa-arrow-right"></i></a>
+              </article>
+            </div>
+
+            <!-- Service 3: House Construction -->
+            <div class="col-md-6 col-xl-4">
+              <article class="info-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80', 'Civil & House Construction')">
+                  <img
+                    src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80"
+                    alt="House Building and Structural Construction Site"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=House+Construction';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-trowel-bricks"></i>
+                </div>
+                <h3>Civil &amp; House Construction</h3>
+                <p>
+                  Turnkey house building, structural design, residential renovation, and commercial civil engineering construction.
+                </p>
+                <p class="text-muted small">
+                  We bring precision engineering to civil construction projects. Our civil team manages everything from site foundation works, concrete framing, roofing, and plumbing to interior finishing and full architectural handovers.
+                </p>
+                <a href="#contact" class="text-link">Start Construction Project <i class="fa-solid fa-arrow-right"></i></a>
+              </article>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-md-6 col-xl-4">
+              <article class="info-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80', 'Industrial Energy Audits')">
+                  <img
+                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
+                    alt="Energy Audit Power Measurement"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Energy+Audits';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3>Industrial Energy Audits</h3>
+                <p>
+                  Comprehensive power quality analysis, thermal assessments, and load optimization designed to drop electrical bills.
+                </p>
+                <p class="text-muted small">
+                  Our certified energy specialists inspect transformer loads, motor power factors, and compressed air lines to reveal hidden power waste. We deliver actionable ROI-backed technical audit reports that pinpoint immediate payback opportunities.
+                </p>
+                <a href="#contact" class="text-link">Request Energy Audit <i class="fa-solid fa-arrow-right"></i></a>
+              </article>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-md-6 col-xl-4">
+              <article class="info-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80', 'Digital Standard Operating Procedures')">
+                  <img
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                    alt="Digital SOP Documentation & Process Management"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Digital+SOPs';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-file-code"></i>
+                </div>
+                <h3>Digital Standard Operating Procedures</h3>
+                <p>
+                  Interactive, standardized operational procedures that streamline factory onboarding and eliminate human operator error.
+                </p>
+                <p class="text-muted small">
+                  We turn unstructured maintenance logs and tribal knowledge into clear, digital visual standard operating procedures accessible via tablets or printed floor binders. This guarantees uniform quality control and reduces technician training time.
+                </p>
+                <a href="#contact" class="text-link">Standardize Operations <i class="fa-solid fa-arrow-right"></i></a>
+              </article>
+            </div>
+
+            <!-- Service 6: Preventive Maintenance -->
+            <div class="col-md-6 col-xl-4">
+              <article class="info-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80', 'Preventive Maintenance & Facility Audits')">
+                  <img
+                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
+                    alt="Facility Preventive Maintenance Inspection"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b263b/ffffff?text=Maintenance+Services';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="icon-box">
+                  <i class="fa-solid fa-wrench"></i>
+                </div>
+                <h3>Preventive Maintenance &amp; Upgrades</h3>
+                <p>
+                  Scheduled facility electrical inspections, mechanical maintenance, transformer testing, and control panel health checks.
+                </p>
+                <p class="text-muted small">
+                  Protect your physical investments. We establish routine maintenance contracts for commercial buildings, factories, and residential estates to identify equipment wear and electrical hazards before costly failures occur.
+                </p>
+                <a href="#contact" class="text-link">Schedule Site Inspection <i class="fa-solid fa-arrow-right"></i></a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTIONS & WHY CHOOSE US SECTION -->
+      <section id="solutions" class="section-spacing alt-bg border-top border-bottom">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <span class="eyebrow">Why Choose MERICoN</span>
+              <h2 class="fw-bold mb-3">Field-Tested Engineering Built Around Real Project Timelines</h2>
+              <p class="text-muted mb-4">
+                Whether constructing modern residential homes, installing high-efficiency electrical networks, or programming complex PLC automation lines, MERICoN brings deep technical domain knowledge and disciplined safety protocols.
+              </p>
+              <p class="text-muted mb-4">
+                Our multi-disciplinary engineering team operates seamlessly across civil construction sites and industrial manufacturing plants, delivering on-time handovers without compromise.
+              </p>
+
+              <ul class="check-list">
+                <li>Modular PLC/SCADA code compliant with IEC 61131-3 international standards.</li>
+                <li>Certified domestic and industrial electrical installation standards.</li>
+                <li>Architectural design, structural integrity, and house construction management.</li>
+                <li>Comprehensive power quality analysis with harmonic reduction solutions.</li>
+                <li>Direct engineer availability with rapid WhatsApp project coordination.</li>
+              </ul>
+
+              <div class="pt-2">
+                <a href="#contact" class="btn btn-primary rounded-pill px-4 me-2">Schedule Engineering Call</a>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="img-container shadow-lg" style="min-height: 400px; max-height: 460px;">
+                <img
+                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+                  alt="MERICoN Engineering Field Team Working on Control Panel"
+                  onerror="this.onerror=null; this.src='https://via.placeholder.com/1000x750/0d1b2a/ffffff?text=MERICoN+Field+Engineers';"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK / PORTFOLIO GALLERY SECTION -->
+      <section id="work" class="section-spacing">
+        <div class="container">
+          <div class="section-heading text-center mb-5">
+            <span class="eyebrow">Our Projects &amp; Work</span>
+            <h2 class="fw-bold">Engineering &amp; Construction Portfolio</h2>
+            <p class="text-muted mx-auto" style="max-width: 650px;">
+              Explore how we have helped industrial facilities automate workflows, resolved electrical power bottlenecks, and constructed high-quality residential buildings.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Automated Packaging & Bottling Line')">
+                  <img
+                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+                    alt="Automated Packaging Bottling Line Project"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Automation+Project';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="card-body p-0">
+                  <span class="badge bg-primary-subtle text-primary mb-2">Automation &amp; PLC</span>
+                  <h3>Automated Packaging &amp; Bottling Line</h3>
+                  <p>
+                    Upgraded legacy relay controls to a unified Siemens PLC system paired with an interactive touchscreen HMI interface.
+                  </p>
+                  <p class="text-muted small">
+                    Achieved a 28% reduction in bottleneck stoppage delays and integrated safety interlocks across synchronized conveyor zones. Fully documented schematics provided.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Project 2: Civil Construction Project -->
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', 'Modern Residential Villa Construction')">
+                  <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                    alt="Modern Residential House Construction Completed Project"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=House+Construction+Project';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="card-body p-0">
+                  <span class="badge bg-warning-subtle text-dark mb-2">House Construction</span>
+                  <h3>Turnkey Modern Family House</h3>
+                  <p>
+                    Complete architectural construction, reinforced foundation framing, roof truss setup, and premium exterior finishing.
+                  </p>
+                  <p class="text-muted small">
+                    Delivered on schedule within budget, including complete domestic electrical installation, modern plumbing infrastructure, and outdoor paving.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card h-100">
+                <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80', 'Facility Power Factor Correction')">
+                  <img
+                    src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80"
+                    alt="Power Factor Correction Audit Setup"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Power+Audit+Project';"
+                  />
+                  <span class="img-zoom-badge"><i class="fa-solid fa-expand me-1"></i> Preview</span>
+                </div>
+                <div class="card-body p-0">
+                  <span class="badge bg-success-subtle text-success mb-2">Energy Optimization</span>
+                  <h3>Facility Power Factor Correction</h3>
+                  <p>
+                    Executed full power analysis across a manufacturing plant, installing automatic capacitor banks and harmonic filters.
+                  </p>
+                  <p class="text-muted small">
+                    Lowered peak reactive power penalties by 82%, yielding a full financial payback on equipment within just 7 months of installation.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Gallery Notice -->
+          <div class="mt-5 p-4 rounded-4 text-center bg-light border border-dashed">
+            <h5 class="fw-bold mb-2"><i class="fa-solid fa-images text-primary me-2"></i>Have More Project Photos to Share?</h5>
+            <p class="text-muted small mb-3">Our team regularly updates site portfolio media. Contact us to request complete case studies or technical drawing reviews.</p>
+            <button class="btn btn-outline-primary btn-sm rounded-pill px-4" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Submit a Project Inquiry
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR TEAM SECTION -->
+      <section id="team" class="section-spacing alt-bg border-top border-bottom">
+        <div class="container">
+          <div class="section-heading text-center mb-5">
+            <span class="eyebrow">Our Team &amp; Leadership</span>
+            <h2 class="fw-bold">Meet the Engineers &amp; Construction Specialists</h2>
+            <p class="text-muted mx-auto" style="max-width: 700px;">
+              Our dedicated leadership team brings together decades of hands-on technical experience in industrial automation, energy auditing, electrical installations, and civil house construction.
+            </p>
+          </div>
+
+          <div class="row g-4 justify-content-center">
+            <!-- Member 1 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="team-card h-100">
+                <div class="team-img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+                    alt="Mupenzi Eric - Lead Automation & Systems Engineer"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Mupenzi+Eric';"
+                  />
+                </div>
+                <span class="team-role">Managing Director &amp; Lead Engineer</span>
+                <h3>Mupenzi Eric</h3>
+                <p>
+                  Expert in SCADA/PLC architecture, industrial control logic design, and operational automation strategy with over 10 years of site deployment experience.
+                </p>
+                <div class="team-socials">
+                  <a href="mailto:mericon.engineering@gmail.com" aria-label="Email Eric"><i class="fa-regular fa-envelope"></i></a>
+                  <a href="#" class="whatsapp-trigger" data-type="general" aria-label="WhatsApp Eric"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Eric"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="team-card h-100">
+                <div class="team-img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+                    alt="Mupenzi Eric - Lead Automation & Systems Engineer"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Mupenzi+Eric';"
+                  />
+                </div>
+                <span class="team-role">IT &amp; Operation Manager</span>
+                <h3>MANZI Honore</h3>
+                <p>
+                  Certified energy auditor specializing in power quality logging, harmonic filter design, power factor correction, and industrial load management.
+                </p>
+                <div class="team-socials">
+                  <a href="mailto:mericonengineering.co.rw@gmail.com" aria-label="Email MERICoN Integratd Engineering ltd"><i class="fa-regular fa-envelope"></i></a>
+                  <a href="#" class="whatsapp-trigger" data-type="general" aria-label="WhatsApp Jean-Paul"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Jean-Paul"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="team-card h-100">
+                <div class="team-img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
+                    alt="Claire Umutoniwase - Civil & Construction Lead"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Claire+Umutoniwase';"
+                  />
+                </div>
+                <span class="team-role">Civil &amp; House Construction Lead</span>
+                <h3>Claire Umutoniwase</h3>
+                <p>
+                  Senior civil engineer directing turnkey house building projects, structural inspections, concrete framing, and site safety management.
+                </p>
+                <div class="team-socials">
+                  <a href="mailto:mericonengineering.co.rw@gmail.com" aria-label="Email Claire"><i class="fa-regular fa-envelope"></i></a>
+                  <a href="#" class="whatsapp-trigger" data-type="general" aria-label="WhatsApp Claire"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Claire"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="team-card h-100">
+                <div class="team-img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                    alt="David Kamanzi - Electrical & Wiring Specialist"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=David+Kamanzi';"
+                  />
+                </div>
+                <span class="team-role">Senior Electrical Installations Engineer</span>
+                <h3>David Kamanzi</h3>
+                <p>
+                  Lead electrical installer overseeing domestic house wiring, main distribution boards, motor control centers (MCC), and grounding protection.
+                </p>
+                <div class="team-socials">
+                  <a href="mailto:mericonengineering.co.rw@gmail.com" aria-label="Email David"><i class="fa-regular fa-envelope"></i></a>
+                  <a href="#" class="whatsapp-trigger" data-type="general" aria-label="WhatsApp David"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn David"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="team-card h-100">
+                <div class="team-img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
+                    alt="Divine Gasana - Operations & Quality Assurance Manager"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Divine+Gasana';"
+                  />
+                </div>
+                <span class="team-role">Operations &amp; SOP Systems Lead</span>
+                <h3>Divine Gasana</h3>
+                <p>
+                  Specialist in quality assurance, standard operating procedure (SOP) digitization, client relations, and commercial project delivery.
+                </p>
+                <div class="team-socials">
+                  <a href="mailto:mericonengineering.co.rw@gmail.com" aria-label="Email Divine"><i class="fa-regular fa-envelope"></i></a>
+                  <a href="#" class="whatsapp-trigger" data-type="general" aria-label="WhatsApp Divine"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Divine"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE CALCULATOR SECTION -->
+      <section id="calculator" class="section-spacing">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+              <span class="eyebrow">Interactive Estimator</span>
+              <h2 class="fw-bold mb-3">Estimate Your Factory's Energy Savings Potential</h2>
+              <p class="text-muted">
+                Calculate approximate annual cost reductions attainable through MERICoN's VFD retrofits, power factor corrections, and load scheduling adjustments.
+              </p>
+              <p class="text-muted small">
+                *This calculator provides indicative operational savings based on typical industrial electrical tariff structures and motor load efficiency gains.
+              </p>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="calc-card">
+                <form id="roiForm" onsubmit="return false;">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label font-monospace small">Total Motor Power (kW)</label>
+                      <input type="number" id="motorKw" class="form-control" value="150" min="1" />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label font-monospace small">Daily Operating Hours</label>
+                      <input type="number" id="opHours" class="form-control" value="16" min="1" max="24" />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label font-monospace small">Electricity Tariff ($ or RWF / kWh)</label>
+                      <input type="number" id="tariff" class="form-control" value="0.18" step="0.01" />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label font-monospace small">Target Efficiency Gain (%)</label>
+                      <select id="efficiencyGain" class="form-select">
+                        <option value="0.12">12% (Standard Motor Optimization)</option>
+                        <option value="0.20" selected>20% (VFD &amp; Power Audit)</option>
+                        <option value="0.30">30% (Comprehensive PLC + VFD)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="calc-result-box mt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                    <div>
+                      <span class="text-white-50 small text-uppercase">Estimated Annual Savings:</span>
+                      <div class="val" id="annualSavings">$15,768 USD</div>
+                    </div>
+                    <button class="btn btn-info rounded-pill px-4 mt-3 mt-sm-0 whatsapp-trigger" data-type="calc">
+                      <i class="fa-brands fa-whatsapp me-1"></i> Request Audit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS SECTION -->
+      <section id="products" class="section-spacing alt-bg border-top border-bottom">
+        <div class="container">
+          <div class="section-heading text-center mb-5">
+            <span class="eyebrow">Digital Products &amp; Toolkits</span>
+            <h2 class="fw-bold">Ready-to-Deploy Technical Resources for Engineers</h2>
+            <p class="text-muted mx-auto" style="max-width: 700px;">
+              Accelerate your engineering workflow with our commercially proven industrial calculators, PLC code templates, and SOP starter packs available for direct purchase.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card h-100">
+                <div class="product-icon-badge">PLC</div>
+                <h3>Industrial PLC Programming &amp; Logic Guide</h3>
+                <p>
+                  A complete practical handbook covering structured ladder logic, function block diagrams, analog signal scaling, and fault handling loops.
+                </p>
+                <p class="text-muted small">
+                  Includes real-world PLC ladder logic examples, state machine design patterns, and debugging cheat-sheets designed for field technicians working under pressure.
+                </p>
+                <a
+                  href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-link"
+                >
+                  Buy on Selar Store <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card h-100">
+                <div class="product-icon-badge">SOP</div>
+                <h3>Commercial SOP Template Suite</h3>
+                <p>
+                  Fully editable Word &amp; PDF templates structured specifically for industrial maintenance, quality control, and workplace safety compliance.
+                </p>
+                <p class="text-muted small">
+                  Features ISO-aligned documentation layouts, visual procedure boxes, revision tracking tables, and safety precaution check-blocks ready to customize for your site.
+                </p>
+                <a
+                  href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-link"
+                >
+                  Buy on Selar Store <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card h-100">
+                <div class="product-icon-badge">XLS</div>
+                <h3>Industrial Engineering Excel Calculators</h3>
+                <p>
+                  Pre-configured, macro-enabled spreadsheets for motor cable sizing, power factor calculation, transformer load balance, and compressed air leakage cost analysis.
+                </p>
+                <p class="text-muted small">
+                  Save hours on calculations. Built with built-in lookup formulas, error validation, and printable engineering summary sheets.
+                </p>
+                <a
+                  href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-link"
+                >
+                  Buy on Selar Store <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section class="section-spacing cta-banner">
+        <div class="container">
+          <div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+            <div>
+              <span class="eyebrow eyebrow-dark">Need a Tailored System?</span>
+              <h2 class="mb-2 text-white fw-bold">Let's solve your automation, electrical, or house construction project.</h2>
+              <p class="text-white-50 mb-0">Connect directly with our engineering team to discuss scope, cost estimates, and site scheduling.</p>
+            </div>
+            <button class="btn btn-info btn-lg rounded-pill px-4 whatsapp-trigger flex-shrink-0" data-type="project">
+              <i class="fa-brands fa-whatsapp me-2"></i> Start Consultation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="section-spacing contact-section">
+        <div class="container">
+          <div class="row g-5 align-items-start">
+            <div class="col-lg-5">
+              <span class="eyebrow">Get in Touch</span>
+              <h2 class="fw-bold mb-3">Request a Technical Consultation or Project Quote</h2>
+              <p class="text-muted mb-4">
+                Share your house construction plan, electrical installation needs, automation challenges, or product inquiries with our team. We respond to all technical requests within 24 business hours.
+              </p>
+
+              <div class="contact-points">
+                <div class="contact-item">
+                  <strong>Email Inquiry</strong>
+                  <a href="mailto:mericonengineering.co.rw@gmail.com"><i class="fa-regular fa-envelope me-2 text-primary"></i>mericonengineering.co.rw@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                  <strong>Direct WhatsApp Line</strong>
+                  <a href="#" class="whatsapp-trigger" data-type="contact"><i class="fa-brands fa-whatsapp me-2 text-success"></i>Message MERICoN Engineering</a>
+                </div>
+                <div class="contact-item">
+                  <strong>Direct Call/SMS</strong>
+                  <a href="tel:+250 799 400 286"><i class="fa-solid fa-phone me-2 text-success"></i>+250 799 400 286</a>
+                  <a href="tel:+250 788 284 487"><i class="fa-solid fa-phone me-2 text-success"></i>+250 788 284 487</a>
+                </div>
+                <div class="contact-item">
+                  <strong>Office Hours</strong>
+                  <span class="fw-semibold">Monday – Saturday: 8:00 AM – 6:00 PM (CAT)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <form id="contactForm" class="contact-form" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label>
+                      <span>Full Name *</span>
+                      <input type="text" name="name" id="formName" placeholder="e.g. John Doe" required />
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <label>
+                      <span>Company / Client Name *</span>
+                      <input type="text" name="company" id="formCompany" placeholder="e.g. Personal Project or Firm Ltd" required />
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <label>
+                      <span>Email Address *</span>
+                      <input type="email" name="email" id="formEmail" placeholder="you@company.com" required />
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <label>
+                      <span>Phone Number *</span>
+                      <input type="tel" name="phone" id="formPhone" placeholder="+250 788 000 000" required />
+                    </label>
+                  </div>
+                  <div class="col-12">
+                    <label>
+                      <span>Project Category *</span>
+                      <select name="projectType" id="formProjectType" required>
+                        <option value="">Select a service focus</option>
+                        <option value="PLC Programming & Automation">PLC Programming &amp; Automation</option>
+                        <option value="Domestic & Industrial Electrical Wiring">Domestic &amp; Industrial Electrical Wiring</option>
+                        <option value="Civil & House Construction">Civil &amp; House Construction</option>
+                        <option value="Industrial Energy Audit">Industrial Energy Audit</option>
+                        <option value="SOP Systems & Documentation">SOP Systems &amp; Documentation</option>
+                        <option value="General Technical Consultation">General Technical Consultation</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="col-12">
+                    <label>
+                      <span>Project Scope or Message *</span>
+                      <textarea name="message" id="formMessage" rows="4" placeholder="Briefly describe your building site, electrical needs, equipment, or operational goals..." required></textarea>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="consent-row mt-3">
+                  <input type="checkbox" id="consent" name="consent" required />
+                  <label for="consent">I consent to MERICoN contacting me regarding this technical inquiry.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 rounded-pill mt-4 py-3 fw-bold">
+                  <i class="fa-solid fa-paper-plane me-2"></i> Send Technical Inquiry
+                </button>
+                <p id="formStatus" class="form-status mt-3 mb-0 text-center fw-semibold" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0 pb-0">
+            <h6 class="modal-title font-monospace fw-bold" id="lightboxTitle">Project Preview</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center p-3">
+            <img id="lightboxImage" src="" class="img-fluid rounded-3 shadow" alt="Project Large Preview" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row gy-4 mb-4">
+          <div class="col-lg-6">
+            <strong>MERICoN Integrated Engineering Ltd.</strong>
+            <p class="small text-white-50 mt-2 style-max-width" style="max-width: 480px;">
+              Empowering facilities, commercial sites, and residential homeowners with cutting-edge automation, electrical wiring, house construction, and energy efficiency solutions.
+            </p>
+          </div>
+          <div class="col-lg-6 text-lg-end">
+            <div class="footer-links d-flex gap-3 flex-wrap justify-content-lg-end mb-3">
+              <a href="#services">Services</a>
+              <a href="#solutions">Solutions</a>
+              <a href="#work">Our Work</a>
+              <a href="#team">Our Team</a>
+              <a href="#calculator">ROI Calculator</a>
+              <a href="#products">Products</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <p class="small text-white-50 mb-0">&copy; <span id="currentYear"></span> MERICoN Integrated Engineering Ltd. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Embedded Application Logic -->
+    <script>
+      let lightboxModalInstance = null;
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Dynamic Year Update
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Header Resize on Scroll
+        const headerEl = document.getElementById('siteHeader');
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 40) {
+            headerEl.classList.add('scrolled');
+          } else {
+            headerEl.classList.remove('scrolled');
+          }
+        });
+
+        // Theme Switcher Toggle (Dark / Light Mode)
+        const themeToggleBtn = document.getElementById('themeToggle');
+        if (themeToggleBtn) {
+          themeToggleBtn.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            themeToggleBtn.innerHTML = isDark
+              ? '<i class="fa-solid fa-sun text-warning"></i> <span>Light</span>'
+              : '<i class="fa-solid fa-moon"></i> <span>Dark</span>';
+          });
+        }
+
+        // Initialize Lightbox Modal
+        const lightboxModalEl = document.getElementById('imageLightboxModal');
+        if (lightboxModalEl) {
+          lightboxModalInstance = new bootstrap.Modal(lightboxModalEl);
+        }
+
+        // ROI Calculator Logic
+        const motorKw = document.getElementById('motorKw');
+        const opHours = document.getElementById('opHours');
+        const tariff = document.getElementById('tariff');
+        const efficiencyGain = document.getElementById('efficiencyGain');
+        const annualSavingsDisplay = document.getElementById('annualSavings');
+
+        function calculateSavings() {
+          const kw = parseFloat(motorKw.value) || 0;
+          const hours = parseFloat(opHours.value) || 0;
+          const rate = parseFloat(tariff.value) || 0;
+          const gain = parseFloat(efficiencyGain.value) || 0;
+
+          // Annual kWh = kw * hours * 365
+          const annualKwh = kw * hours * 365;
+          const annualCost = annualKwh * rate;
+          const savings = annualCost * gain;
+
+          annualSavingsDisplay.textContent = '$' + Math.round(savings).toLocaleString() + ' USD / yr';
+        }
+
+        if (motorKw) {
+          [motorKw, opHours, tariff, efficiencyGain].forEach(element => {
+            element.addEventListener('input', calculateSavings);
+          });
+          calculateSavings();
+        }
+
+        // WhatsApp Direct Integration
+        const whatsappButtons = document.querySelectorAll('.whatsapp-trigger');
+        const whatsappNumber = '250788284487'; // Replace with actual company phone number
+
+        whatsappButtons.forEach(button => {
+          button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const type = this.getAttribute('data-type');
+            let text = 'Hello MERICoN Engineering team, I would like to inquire about your services.';
+
+            if (type === 'project') {
+              text = 'Hello MERICoN Engineering, I am interested in starting a project review for automation, electrical wiring, or house construction.';
+            } else if (type === 'calc') {
+              const kw = motorKw ? motorKw.value : '150';
+              text = `Hello MERICoN Engineering, I calculated an energy savings potential for a ${kw}kW motor system on your website and would like an official site audit.`;
+            } else if (type === 'contact') {
+              text = 'Hello MERICoN Engineering, I have a technical inquiry regarding your engineering and construction solutions.';
+            }
+
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+          });
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        if (contactForm) {
+          contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+              contactForm.classList.add('was-validated');
+              formStatus.textContent = 'Please fill out all required fields accurately.';
+              formStatus.className = 'form-status mt-3 mb-0 text-center text-danger font-monospace';
+              return;
+            }
+
+            const name = document.getElementById('formName').value;
+            const projectType = document.getElementById('formProjectType').value;
+
+            // Simulate Form Submission
+            formStatus.textContent = 'Transmitting your inquiry...';
+            formStatus.className = 'form-status mt-3 mb-0 text-center text-primary font-monospace';
+
+            setTimeout(() => {
+              formStatus.textContent = `Thank you, ${name}! Your inquiry regarding "${projectType}" has been received. Our team will contact you shortly.`;
+              formStatus.className = 'form-status mt-3 mb-0 text-center text-success font-monospace';
+              contactForm.reset();
+              contactForm.classList.remove('was-validated');
+            }, 1200);
+          });
+        }
+      });
+
+      // Lightbox trigger function
+      function openLightbox(imgSrc, titleText) {
+        const imgEl = document.getElementById('lightboxImage');
+        const titleEl = document.getElementById('lightboxTitle');
+        if (imgEl && titleEl && lightboxModalInstance) {
+          imgEl.src = imgSrc;
+          titleEl.textContent = titleText || 'Project Image Preview';
+          lightboxModalInstance.show();
+        }
+      }
+    </script>
+  </body>
+</html>
