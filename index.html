@@ -1,1624 +1,1208 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MERICoN Integrated Engineering Ltd. | Industrial Automation & Civil Construction</title>
-    <meta
-      name="description"
-      content="Industrial automation, PLC programming, energy audits, house construction, and electrical installations across Rwanda and East Africa."
-    />
-    <meta
-      name="keywords"
-      content="MERICoN, industrial automation, PLC programming, energy audits, house construction, electrical installation, Rwanda"
-    />
-    <meta name="author" content="MERICoN Integrated Engineering Ltd." />
-    <meta property="og:title" content="MERICoN Integrated Engineering Ltd." />
-    <meta
-      property="og:description"
-      content="Automation solutions, energy audits, house construction, and electrical engineering."
-    />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#0d1b2a" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap 5 CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-
-    <!-- FontAwesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERICoN Integrated Engineering Ltd. | Professional Engineering Solutions</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#0f172a',
+                            950: '#070a12',
+                        },
+                        navy: {
+                            950: '#0a0f1d',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155'
+                        },
+                        azure: {
+                            DEFAULT: '#2563eb',
+                            glow: 'rgba(37, 99, 235, 0.35)',
+                            light: '#60a5fa'
+                        },
+                        amber: {
+                            energy: '#f59e0b',
+                            glow: 'rgba(245, 158, 11, 0.35)'
+                        },
+                        emerald: {
+                            tech: '#10b981',
+                            glow: 'rgba(16, 185, 129, 0.35)'
+                        },
+                        frost: {
+                            hvac: '#0ea5e9',
+                            glow: 'rgba(14, 165, 233, 0.35)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-      :root {
-        --navy: #0d1b2a;
-        --slate: #1b263b;
-        --cyan: #00e5ff;
-        --blue: #0077b6;
-        --light-bg: #e0f1f7;
-        --text-dark: #2b2d42;
-        --text-muted: #6c757d;
-        --border-light: #dee2e6;
-        --divider: rgba(13, 27, 42, 0.08);
-      }
-
-      body.dark-mode {
-        --navy: #080f18;
-        --slate: #101926;
-        --text-dark: #e2e8f0;
-        --text-muted: #94a3b8;
-        --bg-body: #0a111c;
-        --bg-alt: #0f172a;
-        --border-light: rgba(255, 255, 255, 0.1);
-        --divider: rgba(255, 255, 255, 0.1);
-      }
-
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-      }
-
-      body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        color: var(--text-dark);
-        background-color: #ffffff;
-        overflow-x: hidden;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      body.dark-mode {
-        background-color: var(--bg-body);
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        letter-spacing: -0.02em;
-        font-weight: 700;
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* HEADER & NAVIGATION                                              */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .site-header {
-        background-color: #ffffff;
-        backdrop-filter: blur(12px);
-        position: sticky;
-        top: 0;
-        z-index: 1030;
-        border-bottom: 2px solid var(--navy);
-        transition: all 0.3s ease;
-        padding: 8px 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
-
-      body.dark-mode .site-header {
-        background-color: var(--navy);
-        border-bottom-color: var(--cyan);
-      }
-
-      .site-header.scrolled {
-        padding: 4px 0;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      }
-
-      .navbar-brand {
-        gap: 12px;
-      }
-
-      .navbar-brand img {
-        max-height: 50px;
-        width: auto;
-      }
-
-      .brand-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        line-height: 1;
-      }
-
-      .brand-text strong {
-        color: var(--navy);
-        font-size: 1.1rem;
-        letter-spacing: -0.01em;
-      }
-
-      body.dark-mode .brand-text strong {
-        color: #ffffff;
-      }
-
-      .brand-text small {
-        color: var(--blue);
-        font-size: 0.65rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-      }
-
-      body.dark-mode .brand-text small {
-        color: var(--cyan);
-      }
-
-      .nav-link {
-        color: var(--text-dark) !important;
-        font-weight: 500;
-        font-size: 0.95rem;
-        padding: 0.5rem 0.75rem !important;
-        transition: all 0.2s ease;
-        position: relative;
-      }
-
-      body.dark-mode .nav-link {
-        color: rgba(255, 255, 255, 0.85) !important;
-      }
-
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--blue);
-        transition: width 0.3s ease;
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      body.dark-mode .nav-link::after {
-        background: var(--cyan);
-      }
-
-      .theme-btn {
-        background: rgba(13, 27, 42, 0.06);
-        color: var(--navy);
-        border: 1px solid rgba(13, 27, 42, 0.15);
-        padding: 6px 14px;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .theme-btn:hover {
-        background: var(--navy);
-        color: #ffffff;
-        border-color: var(--navy);
-      }
-
-      body.dark-mode .theme-btn {
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--cyan);
-        border-color: rgba(255, 255, 255, 0.15);
-      }
-
-      body.dark-mode .theme-btn:hover {
-        background: rgba(0, 229, 255, 0.15);
-        border-color: var(--cyan);
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* HERO SECTION                                                     */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .hero-section {
-        background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 60%, #003554 100%);
-        color: #ffffff;
-        padding: 80px 0 100px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-section::before {
-        content: '';
-        position: absolute;
-        top: -40%;
-        right: -15%;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      .hero-content h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-      }
-
-      .hero-content > p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.85);
-        max-width: 520px;
-        margin-bottom: 2rem;
-      }
-
-      .hero-badge {
-        display: inline-block;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.2px;
-        color: var(--cyan);
-        background: rgba(0, 229, 255, 0.12);
-        padding: 8px 16px;
-        border-radius: 6px;
-        margin-bottom: 1.5rem;
-      }
-
-      .hero-cta {
-        display: flex;
-        gap: 1.2rem;
-        flex-wrap: wrap;
-        margin-bottom: 3rem;
-      }
-
-      .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1.5rem;
-        max-width: 500px;
-      }
-
-      .stat-box {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 18px;
-        text-align: center;
-        backdrop-filter: blur(4px);
-        transition: all 0.3s ease;
-      }
-
-      .stat-box:hover {
-        transform: translateY(-4px);
-        border-color: var(--cyan);
-        background: rgba(0, 229, 255, 0.08);
-      }
-
-      .stat-box strong {
-        display: block;
-        font-size: 1.6rem;
-        font-weight: 800;
-        color: var(--cyan);
-        margin-bottom: 6px;
-      }
-
-      .stat-box small {
-        font-size: 0.75rem;
-        color: rgba(255, 255, 255, 0.7);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .hero-visual img {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        transition: transform 0.4s ease;
-      }
-
-      .hero-visual:hover img {
-        transform: scale(1.02);
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* CAPABILITY STRIP                                                 */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .capability-strip {
-        background: var(--navy);
-        color: rgba(255, 255, 255, 0.7);
-        padding: 2rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .capability-strip .capability-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.95rem;
-        font-weight: 500;
-      }
-
-      .capability-strip .capability-item i {
-        color: var(--cyan);
-        font-size: 1.1rem;
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* SERVICES SECTION                                                 */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .section-heading {
-        margin-bottom: 4rem;
-      }
-
-      .section-heading h2 {
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
-        margin-bottom: 1rem;
-        line-height: 1.2;
-      }
-
-      .section-heading p {
-        font-size: 1.05rem;
-        color: var(--text-muted);
-        max-width: 680px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-      }
-
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-      }
-
-      .service-card {
-        background: #ffffff;
-        border: 1px solid var(--divider);
-        border-radius: 12px;
-        padding: 2rem;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-      }
-
-      body.dark-mode .service-card {
-        background: var(--slate);
-        border-color: var(--divider);
-      }
-
-      .service-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
-        border-color: var(--blue);
-      }
-
-      body.dark-mode .service-card:hover {
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
-      }
-
-      .service-icon {
-        width: 50px;
-        height: 50px;
-        background: var(--light-bg);
-        color: var(--blue);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-      }
-
-      body.dark-mode .service-icon {
-        background: rgba(0, 229, 255, 0.12);
-        color: var(--cyan);
-      }
-
-      .service-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.75rem;
-      }
-
-      .service-card p {
-        color: var(--text-muted);
-        line-height: 1.6;
-        font-size: 0.95rem;
-        flex-grow: 1;
-      }
-
-      .service-card .text-link {
-        color: var(--blue);
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--divider);
-        transition: all 0.2s ease;
-      }
-
-      body.dark-mode .service-card .text-link {
-        color: var(--cyan);
-      }
-
-      .service-card .text-link:hover {
-        gap: 10px;
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* WHY CHOOSE US SECTION                                            */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .section-spacing {
-        padding: 80px 0;
-      }
-
-      .alt-bg {
-        background-color: #f8f9fa;
-      }
-
-      body.dark-mode .alt-bg {
-        background-color: var(--bg-alt);
-      }
-
-      .value-list {
-        list-style: none;
-        padding: 0;
-        margin: 2rem 0;
-      }
-
-      .value-list li {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 1.2rem;
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-
-      .value-list li::before {
-        content: '✓';
-        color: var(--blue);
-        font-weight: 800;
-        font-size: 1.1rem;
-        flex-shrink: 0;
-      }
-
-      body.dark-mode .value-list li::before {
-        color: var(--cyan);
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* PORTFOLIO SECTION                                                */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      .project-card {
-        background: #ffffff;
-        border: 1px solid var(--divider);
-        border-radius: 12px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      body.dark-mode .project-card {
-        background: var(--slate);
-      }
-
-      .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-        border-color: var(--blue);
-      }
-
-      .project-image {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        overflow: hidden;
-        background: var(--slate);
-        cursor: pointer;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-      }
-
-      .project-card:hover .project-image img {
-        transform: scale(1.08);
-      }
-
-      .project-badge {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        background: rgba(13, 27, 42, 0.85);
-        color: #ffffff;
-        padding: 6px 12px;
-        border-radius: 6px;
-        backdrop-filter: blur(4px);
-      }
-
-      .project-content {
-        padding: 1.5rem;
-      }
-
-      .project-category {
-        display: inline-block;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--blue);
-        background: rgba(0, 119, 182, 0.1);
-        padding: 4px 10px;
-        border-radius: 4px;
-        margin-bottom: 0.75rem;
-      }
-
-      body.dark-mode .project-category {
-        color: var(--cyan);
-        background: rgba(0, 229, 255, 0.1);
-      }
-
-      .project-card h3 {
-        font-size: 1.15rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .project-card p {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      .project-result {
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid var(--divider);
-        font-size: 0.85rem;
-        color: var(--text-muted);
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* TEAM SECTION                                                     */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2.5rem;
-      }
-
-      .team-card {
-        background: #ffffff;
-        border: 1px solid var(--divider);
-        border-radius: 12px;
-        overflow: hidden;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-
-      body.dark-mode .team-card {
-        background: var(--slate);
-      }
-
-      .team-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-      }
-
-      .team-image {
-        width: 100%;
-        height: 280px;
-        background: var(--slate);
-        overflow: hidden;
-      }
-
-      .team-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-      }
-
-      .team-card:hover .team-image img {
-        transform: scale(1.05);
-      }
-
-      .team-content {
-        padding: 1.75rem;
-      }
-
-      .team-role {
-        display: block;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--blue);
-        letter-spacing: 0.8px;
-        margin-bottom: 0.5rem;
-      }
-
-      body.dark-mode .team-role {
-        color: var(--cyan);
-      }
-
-      .team-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .team-card p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-        margin-bottom: 1.25rem;
-      }
-
-      .team-socials {
-        display: flex;
-        gap: 8px;
-        justify-content: center;
-      }
-
-      .team-socials a {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: rgba(0, 119, 182, 0.1);
-        color: var(--blue);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        font-size: 0.85rem;
-      }
-
-      body.dark-mode .team-socials a {
-        background: rgba(0, 229, 255, 0.1);
-        color: var(--cyan);
-      }
-
-      .team-socials a:hover {
-        background: var(--blue);
-        color: #ffffff;
-        transform: translateY(-3px);
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* PRODUCTS SECTION                                                 */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .product-card {
-        background: #ffffff;
-        border: 1px solid var(--divider);
-        border-radius: 12px;
-        padding: 2.5rem;
-        text-align: center;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-      }
-
-      body.dark-mode .product-card {
-        background: var(--slate);
-      }
-
-      .product-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
-        border-color: var(--blue);
-      }
-
-      .product-badge {
-        width: 60px;
-        height: 60px;
-        background: var(--navy);
-        color: var(--cyan);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 1.2rem;
-        margin: 0 auto 1.5rem;
-        font-family: 'JetBrains Mono', monospace;
-      }
-
-      .product-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-      }
-
-      .product-card p {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        flex-grow: 1;
-      }
-
-      .product-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        color: var(--blue);
-        text-decoration: none;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        transition: gap 0.2s ease;
-      }
-
-      body.dark-mode .product-link {
-        color: var(--cyan);
-      }
-
-      .product-link:hover {
-        gap: 10px;
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* CTA SECTION                                                      */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .cta-section {
-        background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
-        color: #ffffff;
-        padding: 60px 0;
-      }
-
-      .cta-content {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 3rem;
-        backdrop-filter: blur(8px);
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      @media (min-width: 768px) {
-        .cta-content {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
+        *{
+            margin: 0;
+            padding: 0;
         }
-      }
-
-      .cta-content h2 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-        margin: 0;
-      }
-
-      .cta-content p {
-        color: rgba(255, 255, 255, 0.8);
-        margin: 0;
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* CONTACT FORM                                                     */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .contact-form {
-        background: #ffffff;
-        border: 1px solid var(--border-light);
-        padding: 2.5rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      }
-
-      body.dark-mode .contact-form {
-        background: var(--slate);
-        border-color: var(--divider);
-      }
-
-      .contact-form label {
-        display: flex;
-        flex-direction: column;
-        font-weight: 600;
-        font-size: 0.85rem;
-        color: var(--text-dark);
-        margin-bottom: 4px;
-      }
-
-      .contact-form input,
-      .contact-form select,
-      .contact-form textarea {
-        margin-top: 6px;
-        padding: 12px 14px;
-        border: 1px solid var(--border-light);
-        background-color: #ffffff;
-        color: var(--text-dark);
-        border-radius: 8px;
-        font-size: 0.95rem;
-        transition: all 0.2s ease;
-        font-family: inherit;
-      }
-
-      body.dark-mode .contact-form input,
-      body.dark-mode .contact-form select,
-      body.dark-mode .contact-form textarea {
-        background-color: rgba(255, 255, 255, 0.05);
-        border-color: var(--divider);
-        color: var(--text-dark);
-      }
-
-      .contact-form input:focus,
-      .contact-form select:focus,
-      .contact-form textarea:focus {
-        outline: none;
-        border-color: var(--blue);
-        box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
-      }
-
-      .contact-info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 2rem;
-      }
-
-      .contact-info {
-        margin-bottom: 1.5rem;
-      }
-
-      .contact-info strong {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        color: var(--blue);
-        letter-spacing: 0.8px;
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      body.dark-mode .contact-info strong {
-        color: var(--cyan);
-      }
-
-      .contact-info a {
-        color: var(--text-dark);
-        text-decoration: none;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.95rem;
-      }
-
-      .contact-info a:hover {
-        color: var(--blue);
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* FOOTER                                                           */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .site-footer {
-        background-color: var(--navy);
-        color: rgba(255, 255, 255, 0.7);
-        padding: 4rem 0 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .site-footer strong {
-        color: #ffffff;
-        font-size: 1.1rem;
-      }
-
-      .footer-content p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin-top: 0.75rem;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-
-      .footer-links a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: color 0.2s ease;
-      }
-
-      .footer-links a:hover {
-        color: var(--cyan);
-      }
-
-      .footer-bottom {
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.5);
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        padding-top: 2rem;
-        margin-top: 2rem;
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* UTILITIES                                                        */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .btn-primary {
-        background-color: var(--blue);
-        border-color: var(--blue);
-        font-weight: 600;
-        padding: 10px 24px;
-        border-radius: 8px;
-        transition: all 0.2s ease;
-      }
-
-      .btn-primary:hover {
-        background-color: #005f99;
-        border-color: #005f99;
-      }
-
-      .btn-outline-light {
-        color: #ffffff;
-        border-color: rgba(255, 255, 255, 0.5);
-      }
-
-      .btn-outline-light:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-color: #ffffff;
-        color: #ffffff;
-      }
-
-      .btn-info {
-        background-color: var(--cyan);
-        border-color: var(--cyan);
-        color: var(--navy);
-        font-weight: 600;
-      }
-
-      .btn-info:hover {
-        background-color: #00c9e0;
-        border-color: #00c9e0;
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* RESPONSIVE                                                       */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      @media (max-width: 768px) {
-        .section-spacing {
-          padding: 60px 0;
+        body {
+            
+            background-color: #070a12;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        hr{
+            background-color: white;
+            font-size: 20px;
         }
 
-        .hero-section {
-          padding: 60px 0 80px;
+        /* Subtle interactive gradient cards */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .hero-cta {
-          flex-direction: column;
+        .glass-card:hover {
+            border-color: rgba(96, 165, 250, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.8), 0 0 25px -5px rgba(37, 99, 235, 0.15);
         }
 
-        .cta-content {
-          padding: 2rem;
+        /* Color-coded discipline highlights */
+        .card-azure:hover { border-color: rgba(96, 165, 250, 0.5); box-shadow: 0 15px 35px -10px rgba(37, 99, 235, 0.25); }
+        .card-amber:hover { border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.25); }
+        .card-emerald:hover { border-color: rgba(16, 185, 129, 0.5); box-shadow: 0 15px 35px -10px rgba(16, 185, 129, 0.25); }
+        .card-frost:hover { border-color: rgba(14, 165, 233, 0.5); box-shadow: 0 15px 35px -10px rgba(14, 165, 233, 0.25); }
+        .card-ochre:hover { border-color: rgba(217, 119, 6, 0.5); box-shadow: 0 15px 35px -10px rgba(217, 119, 6, 0.25); }
+
+        /* Typography Text Gradient */
+.gradient-text-azure {
+    background: linear-gradient(135deg, #ffffff 10%, #60a5fa 55%, #2563eb 100%);
+    background-size: 100% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for older browsers */
+}
+
+.gradient-text-multi {
+    background: linear-gradient(135deg, #ffffff 15%, #3b82f6 55%, #10b981 100%);
+    background-size: 100% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for older browsers */
+}
+
+
+        /* Engineering Grid Overlay */
+        .eng-grid-pattern {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        .cta-content h2 {
-          font-size: 1.4rem;
-        }
-      }
-
-      /* ─────────────────────────────────────────────────────────────── */
-      /* MODAL                                                            */
-      /* ─────────────────────────────────────────────────────────────── */
-
-      .modal-content {
-        border-radius: 12px;
-        border: 1px solid var(--divider);
-      }
-
-      body.dark-mode .modal-content {
-        background-color: var(--slate);
-        color: var(--text-dark);
-      }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #070a12; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        
     </style>
-  </head>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-azure selection:text-white eng-grid-pattern">
 
-  <body>
-    <!-- HEADER -->
-    <header class="site-header" id="siteHeader">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a href="#top" class="navbar-brand">
-            <img src="MERICoN/MERICON LOGO OG.jpg" alt="MERICoN Logo" />
-            <div class="brand-text d-none d-sm-flex">
-              <strong>MERICoN</strong>
-              <small>Engineering</small>
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80" id="mainHeader", font-weight: bold;>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    
+                    <div>
+    <img src="MERICoN/MERICON LOGO OG.jpg"
+         class="img-fluid rounded-3 shadow"
+         style="height: 60px;"
+         alt="MERICoN Logo">
+</div>
+                </a>
+
+                <!-- Desktop Navigation Links with Hover Highlights -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#about" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors rounded-lg hover:bg-slate-900">About</a>
+                    <a href="#services" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors rounded-lg hover:bg-slate-900">Services</a>
+                    <a href="#capabilities" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors rounded-lg hover:bg-slate-900">Capabilities</a>
+                    <a href="#portfolio" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors rounded-lg hover:bg-slate-900">Projects</a>
+                    <a href="#team" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors rounded-lg hover:bg-slate-900">Team</a>
+                    <a href="#contact" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-azure-light transition-colors rounded-lg hover:bg-slate-900">Contact</a>
+                </nav>
+
+                <!-- Navigation Action CTA Button -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-azure hover:bg-blue-600 text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-azure/25 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-xs"></i> Submit Inquiry
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="p-2.5 rounded-xl bg-slate-900 text-slate-200 hover:text-azure focus:outline-none border border-slate-800">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
             </div>
-          </a>
-
-          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto gap-1">
-              <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-              <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-              <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-              <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
-
-            <div class="d-flex align-items-center gap-2 ms-3 flex-wrap">
-              <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle dark/light theme">
-                <i class="fa-solid fa-moon"></i> <span>Dark</span>
-              </button>
-              <a href="#contact" class="btn btn-outline-dark btn-sm text-nowrap" style="font-size: 0.85rem;">Consult</a>
-              <button class="btn btn-primary btn-sm text-nowrap whatsapp-trigger" data-type="general" style="font-size: 0.85rem;">
-                <i class="fa-brands fa-whatsapp"></i> Chat
-              </button>
-            </div>
-          </div>
         </div>
-      </nav>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-b border-slate-800 px-4 pt-3 pb-6 space-y-2">
+            <a href="#about" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-azure-light">About MERICoN</a>
+            <a href="#services" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-amber-400">Engineering Services</a>
+            <a href="#capabilities" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-emerald-400">Capabilities & Tech</a>
+            <a href="#portfolio" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">Project Portfolio</a>
+            <a href="#team" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-indigo-400">Team</a>
+            <a href="#contact" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-azure-light">Contact & Inquiry</a>
+            <div class="pt-4">
+                <a href="#contact" class="w-full text-center block px-4 py-3 rounded-xl bg-azure text-white font-bold text-sm uppercase tracking-wider shadow-lg">
+                    Submit Project Inquiry
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main id="top">
-      <!-- HERO SECTION -->
-      <section class="hero-section">
-        <div class="container">
-          <div class="row align-items-center gy-5">
-            <div class="col-lg-6">
-              <div class="hero-content">
-                <div class="hero-badge">
-                  <i class="fa-solid fa-bolt me-1"></i> Precision Engineering
+    <main class="pt-20">
+        <section class="relative min-h-[88vh] flex items-center justify-center pt-12 pb-20 overflow-hidden">
+            <!-- Dynamic Glowing Ambient Color Orbs -->
+            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-0 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/3 right-1/3 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-azure-light text-xs font-semibold tracking-wider uppercase shadow-inner">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Multi-Disciplinary Engineering Firm
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Advanced Engineering <br>
+                            <span class="gradient-text-multi">Powering Industrial Growth</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            MERICoN Integrated Engineering Ltd. delivers turnkey industrial automation, high-voltage power grids, heavy machinery leasing, fintech electronics, and HVAC climate systems across East Africa.
+                        </p>
+
+                        <!-- Call to Action Buttons -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
+                            <a href="#services" class="px-8 py-4 rounded-xl bg-azure hover:bg-blue-600 text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-azure/30 transition-all flex items-center gap-3">
+                                <span>Explore Disciplines</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="#contact" class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all border border-slate-700/80 flex items-center gap-2">
+                                <i class="fa-solid fa-headset text-azure-light"></i>
+                                <span>Technical Consultation</span>
+                            </a>
+                        </div>
+
+                        <!-- Interactive Metric Pills -->
+                        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                            <div class="p-3 rounded-xl bg-slate-900/50 border border-slate-800">
+                                <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">150+</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Projects Delivered</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/50 border border-slate-800">
+                                <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">99.8%</div>
+                                <div class="text-xs text-slate-400 mt-0.5">System SLA Uptime</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/50 border border-slate-800">
+                                <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">5 Core</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Specialized Fields</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Interactive Sector Monitor -->
+                    <div class="lg:col-span-5">
+                        <div class="relative max-w-md mx-auto">
+                            <!-- Outer Card Frame -->
+                            <div class="glass-card p-6 rounded-3xl border border-slate-700/80 shadow-2xl space-y-5 relative">
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                                        <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                                        <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                    </div>
+                                    <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                                        EAST AFRICA FIELD ACTIVE
+                                    </span>
+                                </div>
+
+                                <!-- Color-Coded Live Engineering Disciplines -->
+                                <div class="space-y-3">
+                                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-blue-500/30 flex items-center gap-3 hover:border-blue-500 transition-colors">
+                                        <div class="w-10 h-10 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-microchip"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-xs font-bold text-white">Automation & SCADA</div>
+                                            <div class="text-[0.7rem] text-slate-400">Siemens & Allen-Bradley Panels</div>
+                                        </div>
+                                        <span class="text-[0.65rem] font-mono px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">ONLINE</span>
+                                    </div>
+
+                                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-amber-500/30 flex items-center gap-3 hover:border-amber-500 transition-colors">
+                                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-bolt"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-xs font-bold text-white">Power & Motor Rewind</div>
+                                            <div class="text-[0.7rem] text-slate-400">11kV / 33kV Switchgear & Motors</div>
+                                        </div>
+                                        <span class="text-[0.65rem] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">STABLE</span>
+                                    </div>
+
+                                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-emerald-500/30 flex items-center gap-3 hover:border-emerald-500 transition-colors">
+                                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-credit-card"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-xs font-bold text-white">Fintech ATM Electronics</div>
+                                            <div class="text-[0.7rem] text-slate-400">Banking Terminal Field SLA</div>
+                                        </div>
+                                        <span class="text-[0.65rem] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">24/7 FIELD</span>
+                                    </div>
+
+                                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-sky-500/30 flex items-center gap-3 hover:border-sky-500 transition-colors">
+                                        <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-snowflake"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-xs font-bold text-white">Industrial HVAC Chillers</div>
+                                            <div class="text-[0.7rem] text-slate-400">Cleanroom & Cold Storage</div>
+                                        </div>
+                                        <span class="text-[0.65rem] font-mono px-2 py-0.5 rounded bg-sky-500/20 text-sky-300">READY</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 flex items-center justify-between text-xs text-slate-400 font-mono border-t border-slate-800/80">
+                                    <span>HQ: KIGALI, RWANDA</span>
+                                    <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check me-1"></i>RDB CERTIFIED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <h1>Automation, Electrical & Construction Solutions</h1>
-                <p>Industrial PLC systems, power optimization, and turnkey residential construction. Delivered on schedule across Rwanda and East Africa.</p>
-
-                <div class="hero-cta">
-                  <a href="#contact" class="btn btn-primary btn-lg">Request Review</a>
-                  <a href="#products" class="btn btn-outline-light btn-lg">Explore Tools</a>
-                </div>
-
-                <div class="hero-stats">
-                  <div class="stat-box">
-                    <strong>24/7</strong>
-                    <small>Support</small>
-                  </div>
-                  <div class="stat-box">
-                    <strong>+35%</strong>
-                    <small>Efficiency</small>
-                  </div>
-                  <div class="stat-box">
-                    <strong>100%</strong>
-                    <small>Turnkey</small>
-                  </div>
-                </div>
-              </div>
             </div>
+        </section>
 
-            <div class="col-lg-6">
-              <div class="hero-visual">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" alt="Industrial Control Panel" onerror="this.src='https://via.placeholder.com/1200x800/0d1b2a/00e5ff?text=MERICoN+Engineering';" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section id="about" class="py-20 bg-slate-900/60 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-3.5 py-1.5 rounded-lg border border-blue-500/20">
+                            Corporate Overview
+                        </div>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            Engineered for Precision, Driven by Operational Reliability
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            MERICoN Integrated Engineering Ltd is an 
+engineering and technical services company whose 
+main business activity is Activities of Consultants 
+Other 
+Than 
+Architecture 
+Management Consultants.  
+The 
+company 
+provides 
+Engineering and 
+multidisciplinary 
+engineering such as: technical, industrial, electrical, 
+electronic, mechanical, construction, equipment, 
+cleaning, design, research and development, and 
+technical consulting services. <br><br>
+MERICoN's activities include engineering design 
+and consulting for machinery, industrial processes 
+and industrial plant projects, industrial design, 
+research and development in engineering and 
+technology, cleaning of industrial machinery, 
+leasing of construction and civil-engineering 
+machinery, 
+electrical-material 
+telecommunications 
+infrastructure, 
+supply, 
+electronics 
+repair and maintenance, and other technical 
+activities. 
+                        </p>
+                        
 
-      <!-- CAPABILITY STRIP -->
-      <section class="capability-strip">
-        <div class="container">
-          <div class="row g-3 text-center text-lg-start">
-            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-microchip"></i> <span>PLC Automation</span></div></div>
-            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-bolt"></i> <span>Electrical Systems</span></div></div>
-            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-house"></i> <span>Civil Construction</span></div></div>
-            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-gauge-high"></i> <span>Energy Audits</span></div></div>
-            <div class="col-md-auto"><div class="capability-item"><i class="fa-solid fa-file-code"></i> <span>Digital SOPs</span></div></div>
-          </div>
-        </div>
-      </section>
+                        <!-- Mission & Vision Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+                                <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-2">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h3 class="text-sm font-bold text-white mb-1">Our Mission</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">MERICoN integrated engineering ltd, our mission 
+is to provide reliable, innovative, safe and cost
+effective engineering and technical solutions that 
+improve 
+the 
+performance, 
+reliability 
+and 
+sustainability of industrial, commercial, residential 
+and infrastructure projects. 
+MERICoN aims to combine engineering 
+knowledge, practical technical skills and modern technology to solve client’s problems and deliver 
+solutions 
+that 
+meet required technical and 
+operational standards. </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-2">
+                                    <i class="fa-solid fa-eye"></i>
+                                </div>
+                                <h3 class="text-sm font-bold text-white mb-1">Our Vision</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">Our vision is to become a trusted and leading 
+integrated engineering and technical solutions 
+company in Rwanda and the wider region, 
+recognized for engineering excellence, innovation, 
+reliability, safety and customer satisfaction. </p>
+                            </div>
+                        </div>
+                    </div>
 
-      <!-- SERVICES SECTION -->
-      <section id="services" class="section-spacing">
-        <div class="container">
-          <div class="section-heading text-center">
-            <h2>Core Services</h2>
-            <p>Full-spectrum technical capabilities designed for industrial operations and residential projects.</p>
-          </div>
-
-          <div class="service-grid">
-            <!-- Service 1 -->
-            <div class="service-card">
-              <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
-              <h3>PLC & Automation</h3>
-              <p>Custom PLC programming, SCADA/HMI design, and machine logic retrofits engineered for reliability and process stability. Siemens, Allen-Bradley, and Schneider platforms.</p>
-              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="service-card">
-              <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-              <h3>Domestic & Industrial Electricity</h3>
-              <p>Complete high & low voltage wiring, distribution boards, earthing systems, and site power infrastructure. Full safety compliance and reliable energy flow guaranteed.</p>
-              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card">
-              <div class="service-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
-              <h3>Civil & House Construction</h3>
-              <p>Turnkey house building, structural design, and residential renovation. From foundation to interior finishing with premium architectural standards.</p>
-              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="service-card">
-              <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
-              <h3>Industrial Energy Audits</h3>
-              <p>Comprehensive power quality analysis and load optimization. Identify hidden power waste and implement ROI-backed efficiency improvements.</p>
-              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- Service 5 -->
-            <div class="service-card">
-              <div class="service-icon"><i class="fa-solid fa-file-code"></i></div>
-              <h3>Digital SOPs & Documentation</h3>
-              <p>Standardized operational procedures that eliminate human error and streamline factory onboarding. Visual, tablet-accessible, and floor-ready.</p>
-              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-            <!-- Service 6 -->
-            <div class="service-card">
-              <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
-              <h3>Preventive Maintenance</h3>
-              <p>Scheduled facility inspections, electrical testing, and equipment audits. Identify wear and hazards before costly failures occur.</p>
-              <a href="#contact" class="text-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WHY CHOOSE US -->
-      <section id="why" class="section-spacing alt-bg">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="section-heading">
-                <h2>Why Choose MERICoN</h2>
-                <p style="font-size: 1rem; margin: 0;">Field-tested engineering built for real project timelines.</p>
-              </div>
-              <p class="text-muted">Whether constructing modern homes, installing electrical networks, or programming PLC systems, we bring deep technical knowledge and disciplined safety protocols.</p>
-
-              <ul class="value-list">
-                <li>IEC 61131-3 compliant PLC code and architecture</li>
-                <li>Certified electrical installation standards</li>
-                <li>Architectural design and structural engineering</li>
-                <li>Power quality analysis and harmonic solutions</li>
-                <li>Direct engineer availability via WhatsApp</li>
-                <li>On-time handovers without compromise</li>
-              </ul>
-
-              <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
-            </div>
-
-            <div class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="MERICoN Engineering Team" style="width: 100%; border-radius: 12px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);" onerror="this.src='https://via.placeholder.com/1000x750/0d1b2a/ffffff?text=MERICoN+Field+Engineers';" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PORTFOLIO SECTION -->
-      <section id="portfolio" class="section-spacing">
-        <div class="container">
-          <div class="section-heading text-center">
-            <h2>Recent Projectsssss</h2>
-            <p>Industrial automation, residential construction, and electrical infrastructure delivered across the region.</p>
-          </div>
-
-          <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-              <div class="project-image" onclick="openLightbox('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Automated Packaging Line')">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Packaging Line Project" onerror="this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Automation';" />
-                <span class="project-badge">Click to expand</span>
-              </div>
-              <div class="project-content">
-                <span class="project-category">Automation</span>
-                <h3>Automated Packaging & Bottling</h3>
-                <p>Siemens PLC retrofit with HMI touchscreen interface for unified control.</p>
-                <div class="project-result">✓ 28% reduction in stoppage delays | ✓ Safety interlocks integrated</div>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-              <div class="project-image" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', 'Modern Family House')">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="House Construction Project" onerror="this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=House+Construction';" />
-                <span class="project-badge">Click to expand</span>
-              </div>
-              <div class="project-content">
-                <span class="project-category">Construction</span>
-                <h3>Turnkey Modern Family House</h3>
-                <p>Complete residential construction with electrical, plumbing, and finishing.</p>
-                <div class="project-result">✓ On-schedule delivery | ✓ Full domestic electrical installation</div>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-              <div class="project-image" onclick="openLightbox('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80', 'Power Factor Correction')">
-                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Power Audit Project" onerror="this.src='https://via.placeholder.com/800x600/0077b6/ffffff?text=Energy+Audit';" />
-                <span class="project-badge">Click to expand</span>
-              </div>
-              <div class="project-content">
-                <span class="project-category">Energy</span>
-                <h3>Facility Power Factor Correction</h3>
-                <p>Full power analysis with automatic capacitor banks and harmonic filters.</p>
-                <div class="project-result">✓ 82% reduction in reactive power | ✓ 7-month payback period</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TEAM SECTION -->
-      <section id="team" class="section-spacing alt-bg">
-        <div class="container">
-          <div class="section-heading text-center">
-            <h2>Our Leadership Team</h2>
-            <p>Decades of hands-on technical expertise in industrial automation, electrical engineering, and civil construction.</p>
-          </div>
-
-          <div class="team-grid">
-            <!-- Team 1 -->
-            <div class="team-card">
-              <div class="team-image">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Mupenzi Eric" onerror="this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=Mupenzi+Eric';" />
-              </div>
-              <div class="team-content">
-                <span class="team-role">Managing Director</span>
-                <h3>Mupenzi Eric</h3>
-                <p>Lead automation engineer with 10+ years in SCADA/PLC architecture and industrial control systems.</p>
-                <div class="team-socials">
-                  <a href="mailto:mericon.engineering@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
-                  <a href="#" class="whatsapp-trigger" data-type="general" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                  <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Team 2 -->
-            <div class="team-card">
-              <div class="team-image">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="MANZI Honore" onerror="this.src='https://via.placeholder.com/600x800/0d1b2a/ffffff?text=MANZI+Honore';" />
-              </div>
-              <div class="team-content">
-                <span class="team-role">Operations Manager</span>
-                <h3>MANZI Honore</h3>
-                <p>Certified energy auditor specializing in power quality, harmonic filter design, and load management systems.</p>
-                <div class="team-socials">
-                  <a href="mailto:mericonengineering.co.rw@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
-                  <a href="#" class="whatsapp-trigger" data-type="general" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                  <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PRODUCTS SECTION -->
-      <section id="products" class="section-spacing">
-        <div class="container">
-          <div class="section-heading text-center">
-            <h2>Digital Products & Tools</h2>
-            <p>Ready-to-deploy resources for engineers and facility managers.</p>
-          </div>
-
-          <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-              <div class="product-badge">PLC</div>
-              <h3>PLC Programming Guide</h3>
-              <p>Complete handbook covering ladder logic, function blocks, analog scaling, and fault handling loops. Real-world examples and debugging cheat-sheets.</p>
-              <a href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2" target="_blank" rel="noreferrer" class="product-link">Buy on Selar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-              <div class="product-badge">SOP</div>
-              <h3>SOP Template Suite</h3>
-              <p>Editable Word & PDF templates for industrial maintenance, quality control, and safety compliance. ISO-aligned layouts with revision tracking.</p>
-              <a href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2" target="_blank" rel="noreferrer" class="product-link">Buy on Selar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-              <div class="product-badge">XLS</div>
-              <h3>Engineering Calculators</h3>
-              <p>Pre-configured Excel spreadsheets for motor cable sizing, power factor calculations, transformer load balance, and cost analysis.</p>
-              <a href="https://selar.com/m/mupenzi-eric1?currency=RWF&page=2" target="_blank" rel="noreferrer" class="product-link">Buy on Selar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA SECTION -->
-      <section class="section-spacing cta-section">
-        <div class="container">
-          <div class="cta-content">
-            <div>
-              <h2>Need an Engineering Solution?</h2>
-              <p>Connect with our team to discuss scope, timelines, and project costs.</p>
-            </div>
-            <button class="btn btn-info btn-lg flex-shrink-0 whatsapp-trigger" data-type="project">
-              <i class="fa-brands fa-whatsapp me-2"></i> Start Consultation
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT SECTION -->
-      <section id="contact" class="section-spacing alt-bg">
-        <div class="container">
-          <div class="row g-5">
-            <!-- Contact Info -->
-            <div class="col-lg-5">
-              <h2 class="mb-3">Get in Touch</h2>
-              <p class="text-muted mb-4">Share your project needs with our team. We respond to all technical inquiries within 24 business hours.</p>
-
-              <div class="contact-info-grid">
-                <div class="contact-info">
-                  <strong>Email</strong>
-                  <a href="mailto:mericonengineering.co.rw@gmail.com">
-                    <i class="fa-regular fa-envelope"></i> mericonengineering.co.rw@gmail.com
-                  </a>
-                </div>
-
-                <div class="contact-info">
-                  <strong>WhatsApp</strong>
-                  <a href="#" class="whatsapp-trigger" data-type="contact">
-                    <i class="fa-brands fa-whatsapp"></i> Message Us
-                  </a>
-                </div>
-
-                <div class="contact-info">
-                  <strong>Phone</strong>
-                  <a href="tel:+250 799 400 286">
-                    <i class="fa-solid fa-phone"></i> +250 799 400 286
-                  </a>
-                  <a href="tel:+250 788 284 487" style="margin-top: 6px;">
-                    <i class="fa-solid fa-phone"></i> +250 788 284 487
-                  </a>
-                </div>
-
-                <div class="contact-info">
-                  <strong>Office Hours</strong>
-                  <span style="font-weight: 500; color: var(--text-dark);">Mon–Sat: 8:00 AM – 6:00 PM (CAT)</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="col-lg-7">
-              <form id="contactForm" class="contact-form" novalidate>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label>Full Name *<input type="text" name="name" id="formName" placeholder="John Doe" required /></label>
-                  </div>
-                  <div class="col-md-6">
-                    <label>Company *<input type="text" name="company" id="formCompany" placeholder="Your Company" required /></label>
-                  </div>
-                  <div class="col-md-6">
-                    <label>Email *<input type="email" name="email" id="formEmail" placeholder="you@company.com" required /></label>
-                  </div>
-                  <div class="col-md-6">
-                    <label>Phone *<input type="tel" name="phone" id="formPhone" placeholder="+250 788 000 000" required /></label>
-                  </div>
-                  <div class="col-12">
-                    <label>Service Interest *
-                      <select name="projectType" id="formProjectType" required>
-                        <option value="">Select service</option>
-                        <option value="PLC Programming & Automation">PLC Programming & Automation</option>
-                        <option value="Domestic & Industrial Electrical">Domestic & Industrial Electrical</option>
-                        <option value="Civil & House Construction">Civil & House Construction</option>
-                        <option value="Industrial Energy Audit">Industrial Energy Audit</option>
-                        <option value="SOP Systems & Documentation">SOP Systems & Documentation</option>
-                        <option value="General Consultation">General Consultation</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div class="col-12">
-                    <label>Project Details *<textarea name="message" id="formMessage" rows="4" placeholder="Describe your project scope..." required></textarea></label>
-                  </div>
-                </div>
-
-                <div class="form-check mt-3">
-                  <input class="form-check-input" type="checkbox" id="consent" name="consent" required />
-                  <label class="form-check-label" for="consent">I consent to MERICoN contacting me about this inquiry.</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100 mt-4 py-3 fw-bold">
-                  <i class="fa-solid fa-paper-plane me-2"></i> Send Inquiry
-                </button>
-                <p id="formStatus" class="form-status mt-3 mb-0 text-center fw-semibold" aria-live="polite"></p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row gy-4 mb-4">
-          <div class="col-lg-6">
-            <div class="footer-content">
-              <strong>MERICoN Integrated Engineering Ltd.</strong>
-              <p>Empowering facilities and homeowners with cutting-edge automation, electrical systems, house construction, and energy efficiency solutions across Rwanda and East Africa.</p>
-            </div>
-          </div>
-          <div class="col-lg-6 text-lg-end">
-            <div class="footer-links mb-3 justify-content-lg-end">
-              <a href="#services">Services</a>
-              <a href="#why">Why Us</a>
-              <a href="#portfolio">Portfolio</a>
-              <a href="#team">Team</a>
-              <a href="#products">Products</a>
-              <a href="#contact">Contact</a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; <span id="currentYear"></span> MERICoN Integrated Engineering Ltd. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- LIGHTBOX MODAL -->
-    <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header border-0">
-            <h6 class="modal-title" id="lightboxTitle">Project Preview</h6>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body text-center p-3">
-            <img id="lightboxImage" src="" class="img-fluid rounded" alt="Project" />
-          </div>
-        </div>
-      </div>
+                    <!--Capability Features Grid-->
+                    
+<div class="lg:col-span-6 space-y-6">
+    <!-- Section Title: Core Values -->
+    <div class="relative pb-2 inline-block">
+        <h3 class="text-xl font-bold text-white tracking-wide uppercase">Core Values</h3>
+        <div class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 rounded-full"></div>
     </div>
 
-    <!-- Bootstrap & Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Grid Container with Normalized Dimensions -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 auto-rows-stretch">
+        
+        <!-- 01. Professionalism -->
+        <div class="p-6 h-full flex flex-col justify-between rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800/80 hover:border-blue-500/30 transition-all duration-300 space-y-4 group">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-lg font-mono font-bold transition-colors group-hover:bg-blue-500/20">
+                01
+            </div>
+            <div class="space-y-1.5 flex-grow">
+                <h4 class="text-base font-semibold text-white tracking-wide">Professionalism</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Applying professional engineering standards in all our work.</p>
+            </div>
+        </div>
+
+        <!-- 02. Integrity -->
+        <div class="p-6 h-full flex flex-col justify-between rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800/80 hover:border-emerald-500/30 transition-all duration-300 space-y-4 group">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-lg font-mono font-bold transition-colors group-hover:bg-emerald-500/20">
+                02
+            </div>
+            <div class="space-y-1.5 flex-grow">
+                <h4 class="text-base font-semibold text-white tracking-wide">Integrity</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Operating honestly, ethically, and transparently in every relationship.</p>
+            </div>
+        </div>
+
+        <!-- 03. Quality -->
+        <div class="p-6 h-full flex flex-col justify-between rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800/80 hover:border-amber-500/30 transition-all duration-300 space-y-4 group">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center text-lg font-mono font-bold transition-colors group-hover:bg-amber-500/20">
+                03
+            </div>
+            <div class="space-y-1.5 flex-grow">
+                <h4 class="text-base font-semibold text-white tracking-wide">Quality</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Delivering high-quality engineering services and precision solutions.</p>
+            </div>
+        </div>
+
+        <!-- 04. Safety -->
+        <div class="p-6 h-full flex flex-col justify-between rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800/80 hover:border-red-500/30 transition-all duration-300 space-y-4 group">
+            <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center text-lg font-mono font-bold transition-colors group-hover:bg-red-500/20">
+                04
+            </div>
+            <div class="space-y-1.5 flex-grow">
+                <h4 class="text-base font-semibold text-white tracking-wide">Safety</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Prioritizing the safety of people, machinery, and the environment.</p>
+            </div>
+        </div>
+
+        <!-- 05. Innovation -->
+        <div class="p-6 h-full flex flex-col justify-between rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800/80 hover:border-purple-500/30 transition-all duration-300 space-y-4 group">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center text-lg font-mono font-bold transition-colors group-hover:bg-purple-500/20">
+                05
+            </div>
+            <div class="space-y-1.5 flex-grow">
+                <h4 class="text-base font-semibold text-white tracking-wide">Innovation</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Using modern technology and creative layouts to solve engineering challenges.</p>
+            </div>
+        </div>
+
+        <!-- 06. Reliability -->
+        <div class="p-6 h-full flex flex-col justify-between rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800/80 hover:border-sky-500/30 transition-all duration-300 space-y-4 group">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/20 flex items-center justify-center text-lg font-mono font-bold transition-colors group-hover:bg-sky-500/20">
+                06
+            </div>
+            <div class="space-y-1.5 flex-grow">
+                <h4 class="text-base font-semibold text-white tracking-wide">Reliability</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Providing dependable turn-key solutions and reliable technical support.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3.5 py-1.5 rounded-lg border border-amber-500/20 mb-3">
+                        Technical Offerings
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Our Core Engineering Disciplines
+                    </h2>
+                    
+                </div>
+
+                <!-- Disciplines Grid with Interactive Discipline Colors -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Discipline 1: Automation (Azure Theme) -->
+                    <div class="glass-card card-azure p-8 rounded-3xl relative flex flex-col justify-between group border border-slate-800">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-blue-600/10 text-blue-400 border border-blue-500/20 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <span class="text-[0.7rem] font-mono text-blue-400 uppercase tracking-widest block mb-1">Discipline 01</span>
+                            
+                            <h3 class="text-xl font-bold text-white mb-3">Industrial Automation & SCADA Panels</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                                Custom design, programming, panel assembly, and commissioning of PLC control cabinets, HMI interfaces, Variable Frequency Drives (VFDs), and SCADA monitoring networks.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 pt-4 border-t border-slate-800/80 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Siemens & Allen-Bradley Integration</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Custom Control Cabinet Wiring</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Telemetry & Real-Time Monitoring</li>
+                        </ul>
+                    </div>
+
+                    <!-- Discipline 2: Power Systems (Amber Theme) -->
+                    <div class="glass-card card-amber p-8 rounded-3xl relative flex flex-col justify-between group border border-slate-800">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span class="text-[0.7rem] font-mono text-amber-400 uppercase tracking-widest block mb-1">Discipline 02</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Electric Motors & Power Grid</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                                Overhaul, precision coil rewinding, dynamic rotor balancing for heavy electric induction motors, transformer servicing, power factor correction, and switchgear setup.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 pt-4 border-t border-slate-800/80 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> High-Capacity Motor Rewinding</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Transformer Servicing & Oil Testing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Power Factor & Substation Panels</li>
+                        </ul>
+                    </div>
+
+                    <!-- Discipline 3: Civil Fleet (Ochre / Orange Theme) -->
+                    <div class="glass-card card-ochre p-8 rounded-3xl relative flex flex-col justify-between group border border-slate-800">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-600/10 text-amber-500 border border-amber-600/20 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-truck-monster"></i>
+                            </div>
+                            <span class="text-[0.7rem] font-mono text-amber-500 uppercase tracking-widest block mb-1">Discipline 03</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Civil Machinery Fleet & Operations</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                                Fleet leasing of heavy earthmoving equipment (excavators, loaders, bulldozers), backed by field mechanical technicians and civil structural earthwork execution.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 pt-4 border-t border-slate-800/80 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Heavy Equipment Rental Fleet</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Onsite Mechanical Field Support</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Earthworks & Industrial Foundations</li>
+                        </ul>
+                    </div>
+
+                    <!-- Discipline 4: Fintech & Telecom (Emerald Theme) -->
+                    <div class="glass-card card-emerald p-8 rounded-3xl relative flex flex-col justify-between group border border-slate-800">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+                            <span class="text-[0.7rem] font-mono text-emerald-400 uppercase tracking-widest block mb-1">Discipline 04</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Telecom, POS & ATM Electronics</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                                Specialist component-level repair and rapid field support for commercial banking ATM networks, Point-of-Sale (POS) terminals, and telecom battery/power backup systems.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 pt-4 border-t border-slate-800/80 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> ATM Power Unit & Reader Overhaul</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Banking Terminal Electronics</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Telecom DC Power Backups</li>
+                        </ul>
+                    </div>
+
+                    <!-- Discipline 5: HVAC Climate (Frost Sky Blue Theme) -->
+                    <div class="glass-card card-frost p-8 rounded-3xl relative flex flex-col justify-between group border border-slate-800">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-400 border border-sky-500/20 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-snowflake"></i>
+                            </div>
+                            <span class="text-[0.7rem] font-mono text-sky-400 uppercase tracking-widest block mb-1">Discipline 05</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Industrial HVAC & Climate Control</h3>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                                Commercial chilled water plants, ducting installation, precision cleanroom air handling, and environmental temperature control for factories and laboratories.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 pt-4 border-t border-slate-800/80 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Chilled Water Central Plants</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Cleanroom Ventilation & HEPA</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Preventive HVAC Maintenance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Direct Technical Inquiry Card -->
+                    <div class="glass-card p-8 rounded-3xl border border-blue-500/30 bg-gradient-to-br from-slate-900 to-slate-950 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-blue-500/20 text-azure-light flex items-center justify-center text-2xl font-bold mb-6">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <span class="text-[0.7rem] font-mono text-azure-light uppercase tracking-widest block mb-1">Consultation Desk</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Require a Custom Technical Audit?</h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                                Our senior engineers perform comprehensive onsite infrastructure assessments and diagnostic audits for existing or planned facilities.
+                            </p>
+                        </div>
+                        <a href="#contact" class="w-full py-3.5 rounded-xl bg-azure hover:bg-blue-600 text-white font-bold text-xs uppercase tracking-wider text-center block transition-all shadow-lg shadow-azure/20">
+                            Request Site Consultation
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities" class="py-20 bg-slate-900/60 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-lg border border-emerald-500/20">
+                            Tools & Infrastructure
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-white tracking-tight">
+                            Advanced Testing & Diagnostic Capabilities
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            We equip our engineering workshop and field teams with calibrated diagnostic tools to ensure full compliance with international electrical and mechanical standards.
+                        </p>
+
+                        <div class="space-y-3.5 pt-2">
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">PLC & SCADA Diagnostics</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Siemens TIA Portal, Rockwell Studio 5000, and multi-protocol industrial communication gateways.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Power Quality & Thermal Inspection</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Thermal imaging, insulation resistance testing (Megger), vibration meters, and power analyzers.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Kigali Machine Workshop</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">In-house facility for motor coil rewinding, dynamic balancing, hydraulic press work, and micro-soldering.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Badge Grid -->
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            
+                            <div class="p-6 rounded-2xl glass-card text-center space-y-3 border border-slate-800">
+                                <i class="fa-solid fa-microchip text-3xl text-blue-400"></i>
+                                <div class="text-sm font-bold text-white">Siemens S7-1500</div>
+                                <span class="text-[0.65rem] text-slate-400 block font-mono">PLC Automation</span>
+                            </div>
+
+                            <div class="p-6 rounded-2xl glass-card text-center space-y-3 border border-slate-800">
+                                <i class="fa-solid fa-gears text-3xl text-amber-400"></i>
+                                <div class="text-sm font-bold text-white">Allen-Bradley</div>
+                                <span class="text-[0.65rem] text-slate-400 block font-mono">ControlLogix VFD</span>
+                            </div>
+
+                            <div class="p-6 rounded-2xl glass-card text-center space-y-3 border border-slate-800">
+                                <i class="fa-solid fa-desktop text-3xl text-emerald-400"></i>
+                                <div class="text-sm font-bold text-white">WinCC & SCADA</div>
+                                <span class="text-[0.65rem] text-slate-400 block font-mono">Telemetry Control</span>
+                            </div>
+
+                            <div class="p-6 rounded-2xl glass-card text-center space-y-3 border border-slate-800">
+                                <i class="fa-solid fa-bolt-lightning text-3xl text-yellow-400"></i>
+                                <div class="text-sm font-bold text-white">11kV / 33kV Grid</div>
+                                <span class="text-[0.65rem] text-slate-400 block font-mono">Substation Testing</span>
+                            </div>
+
+                            <div class="p-6 rounded-2xl glass-card text-center space-y-3 border border-slate-800">
+                                <i class="fa-solid fa-dumpster text-3xl text-orange-400"></i>
+                                <div class="text-sm font-bold text-white">CAT & Komatsu</div>
+                                <span class="text-[0.65rem] text-slate-400 block font-mono">Machinery Fleet</span>
+                            </div>
+
+                            <div class="p-6 rounded-2xl glass-card text-center space-y-3 border border-slate-800">
+                                <i class="fa-solid fa-temperature-arrow-down text-3xl text-sky-400"></i>
+                                <div class="text-sm font-bold text-white">Daikin & Carrier</div>
+                                <span class="text-[0.65rem] text-slate-400 block font-mono">Industrial HVAC</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-3.5 py-1.5 rounded-lg border border-sky-500/20 mb-3">
+                        Proven Track Record
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Featured Field Deployments
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-3">
+                        A selection of engineering projects executed across industrial, banking, and utility sectors.
+                    </p>
+                </div>
+
+                <!-- Interactive Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-10" id="portfolioFilter">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-azure text-white">All Projects</button>
+                    <button data-filter="automation" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">Automation</button>
+                    <button data-filter="power" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">Power Grid</button>
+                    <button data-filter="civil" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">Civil Fleet</button>
+                    <button data-filter="fintech" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">IT</button>
+                    <button data-filter="hvac" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800">HVAC</button>
+                </div>
+
+                <!-- Portfolio Items Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+                    
+                    <!-- Project 1 -->
+                    <div class="portfolio-item automation glass-card card-azure rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/20">AUTOMATION</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot me-1"></i> Kigali, Rwanda</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Industrial Beverage Factory PLC Overhaul</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Redesigned and automated main bottling line cabinet with Siemens S7-1500 PLC, cutting unplanned line downtime by 42%.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-mono">
+                            <span>Delivery: Turnkey</span>
+                            <span class="text-emerald-400 font-bold">Completed</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="portfolio-item power glass-card card-amber rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">POWER GRID</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot me-1"></i> Musanze, Rwanda</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">33kV Substation Transformer Servicing</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Oil purification, coil insulation resistance testing, and switchgear calibration for a major regional utility substation node.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-mono">
+                            <span>Rating: High Voltage</span>
+                            <span class="text-emerald-400 font-bold">Completed</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="portfolio-item civil glass-card card-ochre rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-amber-500 bg-amber-600/10 px-2.5 py-1 rounded border border-amber-600/20">CIVIL FLEET</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot me-1"></i> Bugesera, Rwanda</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Commercial Infrastructure Heavy Earthmoving</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Fleet deployment of 12 excavators, loaders, and onsite mechanical service engineers for industrial park ground development.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-mono">
+                            <span>Scope: Fleet Leasing</span>
+                            <span class="text-amber-400 font-bold">Active SLA</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="portfolio-item fintech glass-card card-emerald rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">ATM & FINTECH</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot me-1"></i> Regional EA</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">ATM Power Backup & Electronics Retrofit</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Component overhaul for power supply units, UPS systems, and card reader electronics across 80+ commercial bank ATMs.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-mono">
+                            <span>Coverage: 24/7 Response</span>
+                            <span class="text-emerald-400 font-bold">Active SLA</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="portfolio-item hvac glass-card card-frost rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded border border-sky-500/20">HVAC</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot me-1"></i> Rubavu, Rwanda</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Pharmaceutical Cleanroom Chiller Setup</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Installation of modular chilled water plant, HEPA air filtration ducts, and precision climate control for lab conditions.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-mono">
+                            <span>Standard: Cleanroom Class A</span>
+                            <span class="text-emerald-400 font-bold">Completed</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="portfolio-item power glass-card card-amber rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between">
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">MOTOR REWIND</span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot me-1"></i> Kigali Workshop</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">250kW Heavy Induction Motor Overhaul</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Precision stator rewinding, dynamic rotor balancing, and full-load bench testing for a mining pump station motor.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-mono">
+                            <span>Test: Bench Certified</span>
+                            <span class="text-emerald-400 font-bold">Completed</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-20 bg-slate-900/60 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3.5 py-1.5 rounded-lg border border-indigo-500/20 mb-3">
+                        Technical Leadership
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Our Team
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-3">
+                        Led by engineers with deep technical backgrounds across regional power, civil, and industrial systems.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Team Lead 1 -->
+                    <div class="glass-card p-6 rounded-3xl text-center space-y-4 border border-slate-800">
+                        <img src="MERICoN/eric.jpg" style="display: block; margin: 0 auto; width: 180px; height: 180px;" class="rounded-lg border border-slate-800" alt="GM Eric">
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Chief Executive Officer</h3>
+                            <span class="text-xs font-mono text-blue-400 block mt-0.5">Current General Manager of Core representator of MERICoN Integrated Engineering LTD</span>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            He has experience in both Electrical Engineering, and Machanical Engineering.
+                        </p>
+                        <hr>
+                        <div class="pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[0.7rem] font-mono text-slate-300">Eng. Mupenzi Eric / Tel: +250799400286</span>
+                        </div>
+                    </div>
+
+                    <!-- Team Lead 2 -->
+                    <div class="glass-card p-6 rounded-3xl text-center space-y-4 border border-slate-800">
+                        <img src="MERICoN/gm eric.jpg" style="display: block; margin: 0 auto; width: 180px; height: 180px;" class="rounded-lg border border-slate-800" alt="GM Eric">
+
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Operation Manager</h3>
+                            <span class="text-xs font-mono text-amber-400 block mt-0.5">Infrastructure & Equipment</span>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Experienced in planning and helping in taking decision related to sustainable development of MERICoN Integrated Engineering Ltd
+                        </p>
+                        <hr>
+                        <div class="pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[0.7rem] font-mono text-slate-300">Eng. Mupenzi Eric / Tel: +250799400286</span>
+                        </div>
+                    </div>
+
+                    <!-- Team Lead 3 -->
+                    <div class="glass-card p-6 rounded-3xl text-center space-y-4 border border-slate-800">
+                        <img src="MERICoN/Honore.jpg" style="display: block; margin: 0 auto; width: 180px; height: 180px;" class="rounded-lg border border-slate-800" alt="GM Eric">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">IT Manager</h3>
+                            <span class="text-xs font-mono text-emerald-400 block mt-0.5">Responsible for all IT Support in MERICoN Ltd</span>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Exprienced in Networking and Software related troubleshooting and real-time IT Support
+                        </p><br>
+                        <hr>
+                        <div class="pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[0.7rem] font-mono text-slate-300">MANZI Honore/ Tel: +250793516922</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left Contact Details -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-azure-light bg-blue-500/10 px-3.5 py-1.5 rounded-lg border border-blue-500/20 mb-3">
+                                Direct Contact Desk
+                            </div>
+                            <h2 class="text-3xl font-extrabold text-white tracking-tight">
+                                Contact us
+                            </h2>
+                            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                                Reach out for technical consultation, tenders, or  site service requests.
+                            </p>
+                        </div>
+
+                        <!-- Contact Cards -->
+                        <div class="space-y-4">
+                            <div class="p-5 rounded-2xl glass-card border border-slate-800 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider">Headquarters</h4>
+                                    <p class="text-sm font-semibold text-white mt-1">MERICoN Integrated Engineering Ltd</p>
+                                    <p class="text-xs text-slate-400">Kicukiro, Rwanda</p>
+                                </div>
+                            </div>
+
+                            <div class="p-5 rounded-2xl glass-card border border-slate-800 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider">Email Inquiries</h4>
+                                    <p class="text-sm font-mono text-white mt-1">info@mericonengineering.co.rw@gmail.com</p>
+                                    <p class="text-xs text-slate-400">Response time: Within 12 hours</p>
+                                </div>
+                            </div>
+
+                            <div class="p-5 rounded-2xl glass-card border border-slate-800 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Field Support Line</h4>
+                                    <p class="text-sm font-mono text-white mt-1">+250 788 284 487 / +250 799 400 286</p>
+                                    <p class="text-xs text-slate-400">Full-Time</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accreditation Note -->
+                        <div class="p-4 rounded-xl bg-slate-900 border border-yellow-800 text-xs text-slate-400 flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-yellow-400 text-xl"></i>
+
+                            <span>Fully accredited by Rwanda Development Board (RDB) and corporate regulatory authorities.</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Form Column -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl relative">
+                            <h3 class="text-xl font-bold text-white mb-2">Submit Technical Project Inquiry</h3>
+                            <p class="text-xs text-slate-400 mb-6">Complete the inquiry details below and an assigned engineer will reply promptly.</p>
+
+                            <form id="contactForm" class="space-y-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Full Name *</label>
+            <input type="text" id="clientName" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-azure focus:outline-none transition-all">
+        </div>
+        <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Organization / Company</label>
+            <input type="text" id="clientCompany" placeholder="Industrial Enterprise Ltd" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-azure focus:outline-none transition-all">
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Email Address *</label>
+            <input type="email" id="clientEmail" required placeholder="contact@company.rw" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-azure focus:outline-none transition-all">
+        </div>
+        <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Phone Number *</label>
+            <input type="tel" id="clientPhone" required placeholder="+250 78... " class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-azure focus:outline-none transition-all">
+        </div>
+    </div>
+
+    <div>
+        <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Primary Discipline Interest</label>
+        <select id="clientDiscipline" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs focus:ring-2 focus:ring-azure focus:outline-none transition-all">
+            <option value="Industrial Automation & PLC Cabinets">Industrial Automation & PLC Cabinets</option>
+            <option value="Electric Motors & Power Distribution">Electric Motors & Power Distribution</option>
+            <option value="Civil Works & Machinery Leasing">Civil Works & Machinery Leasing</option>
+            <option value="Telecom, POS & ATM Electronics Repair">Telecom, POS & ATM Electronics Repair, Network Installating, Software building</option>
+            <option value="Industrial HVAC & Climate Control">Industrial HVAC & Climate Control</option>
+            <option value="General Engineering Consultation">General Engineering Consultation</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Project Details / Scope *</label>
+        <textarea id="clientMessage" rows="4" required placeholder="Describe your technical requirements, project location, and target schedule..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-azure focus:outline-none transition-all"></textarea>
+    </div>
+
+    <button type="submit" id="inquiryButton" class="w-full py-4 rounded-xl bg-azure hover:bg-blue-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-azure/25 transition-all flex items-center justify-center gap-2">
+        <i class="fa-solid fa-paper-plane"></i> Send Inquiry
+    </button>
+</form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Prevent the default form submission page reload
+    e.preventDefault();
+
+    // 1. Safely gather all field values using matching element IDs
+    const name = document.getElementById('clientName').value;
+    const company = document.getElementById('clientCompany').value || 'Not Specified';
+    const email = document.getElementById('clientEmail').value;
+    const phone = document.getElementById('clientPhone').value;
+    const discipline = document.getElementById('clientDiscipline').value;
+    const message = document.getElementById('clientMessage').value;
+
+    // 2. Setup your target delivery credentials
+    const whatsappNumber = "250793516922"; 
+    const targetEmail = "manzihonore09@gmail.com";
+    const emailSubject = encodeURIComponent("New MERICoN Engineering Inquiry");
+
+    // 3. Construct a professional structured text report
+    const rawText = `Hello MERICoN Engineering,\n\nI want to submit a project inquiry:\n\n` +
+                    `• Name: ${name}\n` +
+                    `• Company: ${company}\n` +
+                    `• Email: ${email}\n` +
+                    `• Phone: ${phone}\n` +
+                    `• Discipline: ${discipline}\n\n` +
+                    `• Project Details:\n${message}`;
+                    
+    const formattedText = encodeURIComponent(rawText);
+
+    // 4. Open WhatsApp execution path safely in a separate tab window
+    const whatsappUrl = `https://wa.me{whatsappNumber}?text=${encodedText}`;
+    window.open(whatsappUrl, '_blank');
+
+    // 5. Open native desktop or mobile email provider composer flow immediately after
+    const mailtoUrl = `mailto:${targetEmail}?subject=${emailSubject}&body=${formattedText}`;
+    window.location.href = mailtoUrl;
+});
+</script>
+
+
+                            <div id="formSuccessAlert" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center">
+                                <i class="fa-solid fa-circle-check text-base block mb-1"></i>
+                                Inquiry received! Our technical desk will contact you shortly.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+<footer class="bg-slate-950 border-t border-slate-800 py-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+            <!-- Brand Footer Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="MERICoN/MERICON LOGO OG.jpg" style="height: 60px;" alt="">
+            </a>
+
+            <!-- Footer Meta / Action Links (Non-Header Navigation) -->
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-medium text-slate-400">
+                <a href="tel:+250788284487" class="hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-[10px]"></i> +250 788 284 487
+                </a>
+                <a href="tel:+250799400286" class="hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-[10px]"></i> +250 788 400 286
+                </a>
+                
+                <a href="mailto:info@mericonengineering.co.rw@gmail.com" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-[10px]"></i> Email Us
+                </a>
+                <a href="https://selar.com/m/mupenzi-eric1" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-book text-[10px]"></i> Digital Manuals Store
+                </a>
+                <span class="text-slate-700 hidden sm:inline">|</span>
+                <a href="#privacy" class="hover:text-slate-200 transition-colors">Privacy Policy</a>
+                <a href="#terms" class="hover:text-slate-200 transition-colors">Terms of Service</a>
+            </div>
+
+            <!-- Scroll Top -->
+            <a href="#" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-azure-light border border-slate-800 transition-colors" aria-label="Scroll to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[0.75rem]">
+            <p>&copy; <span id="yearSpan"></span> MERICoN Integrated Engineering Ltd. All rights reserved.</p>
+            <p class="font-mono text-slate-500">Kicukiro, Kigali, Rwanda</p>
+        </div>
+    </div>
+</footer>
 
     <script>
-      let lightboxModalInstance = null;
+        // Dynamic Copyright Year
+        document.getElementById('yearSpan').textContent = new Date().getFullYear();
 
-      document.addEventListener('DOMContentLoaded', function () {
-        // Year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
 
-        // Header scroll effect
-        const headerEl = document.getElementById('siteHeader');
-        window.addEventListener('scroll', function () {
-          if (window.scrollY > 40) {
-            headerEl.classList.add('scrolled');
-          } else {
-            headerEl.classList.remove('scrolled');
-          }
-        });
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
 
-        // Theme toggle
-        const themeToggleBtn = document.getElementById('themeToggle');
-        if (themeToggleBtn) {
-          themeToggleBtn.addEventListener('click', function () {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            themeToggleBtn.innerHTML = isDark
-              ? '<i class="fa-solid fa-sun text-warning"></i> <span>Light</span>'
-              : '<i class="fa-solid fa-moon"></i> <span>Dark</span>';
-          });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
         }
 
-        // Lightbox
-        const lightboxModalEl = document.getElementById('imageLightboxModal');
-        if (lightboxModalEl) {
-          lightboxModalInstance = new bootstrap.Modal(lightboxModalEl);
-        }
+        // Portfolio Filter Tabs Logic
+        const filterBtns = document.querySelectorAll('#portfolioFilter .filter-btn');
+        const portfolioItems = document.querySelectorAll('#portfolioGrid .portfolio-item');
 
-        // WhatsApp
-        const whatsappButtons = document.querySelectorAll('.whatsapp-trigger');
-        const whatsappNumber = '250788284487';
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-azure', 'text-white');
+                    b.classList.add('bg-slate-900', 'text-slate-300');
+                });
 
-        whatsappButtons.forEach(button => {
-          button.addEventListener('click', function (e) {
-            e.preventDefault();
-            const type = this.getAttribute('data-type');
-            let text = 'Hello MERICoN Engineering, I would like to inquire about your services.';
+                btn.classList.add('active', 'bg-azure', 'text-white');
+                btn.classList.remove('bg-slate-900', 'text-slate-300');
 
-            if (type === 'project') {
-              text = 'Hello MERICoN Engineering, I am interested in starting a project review.';
-            } else if (type === 'contact') {
-              text = 'Hello MERICoN Engineering, I have a technical inquiry.';
-            }
+                const filter = btn.getAttribute('data-filter');
 
-            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
-          });
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
         });
 
-        // Contact form
+        // Contact Form Submission
         const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
+        const formSuccessAlert = document.getElementById('formSuccessAlert');
 
-        if (contactForm) {
-          contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            if (!contactForm.checkValidity()) {
-              contactForm.classList.add('was-validated');
-              formStatus.textContent = 'Please fill all required fields.';
-              formStatus.className = 'form-status mt-3 mb-0 text-center text-danger';
-              return;
-            }
-
-            const name = document.getElementById('formName').value;
-            formStatus.textContent = 'Sending your inquiry...';
-            formStatus.className = 'form-status mt-3 mb-0 text-center text-primary';
-
-            setTimeout(() => {
-              formStatus.textContent = `Thank you, ${name}! Your inquiry has been received. We'll contact you shortly.`;
-              formStatus.className = 'form-status mt-3 mb-0 text-center text-success';
-              contactForm.reset();
-              contactForm.classList.remove('was-validated');
-            }, 1200);
-          });
+        if (contactForm && formSuccessAlert) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formSuccessAlert.classList.remove('hidden');
+                contactForm.reset();
+                setTimeout(() => {
+                    formSuccessAlert.classList.add('hidden');
+                }, 6000);
+            });
         }
-      });
-
-      function openLightbox(imgSrc, titleText) {
-        if (lightboxModalInstance) {
-          document.getElementById('lightboxImage').src = imgSrc;
-          document.getElementById('lightboxTitle').textContent = titleText || 'Project Image';
-          lightboxModalInstance.show();
-        }
-      }
     </script>
-  </body>
+</body>
 </html>
